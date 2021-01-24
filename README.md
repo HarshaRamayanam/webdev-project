@@ -1,2 +1,2 @@
 # webdev-project
-This is a private repo for Full Stack Web Development - Project
+This is a public repo for Full Stack Web Development - Project
