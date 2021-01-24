@@ -1,2 +1,3 @@
 # webdev-project
-This is a public repo for Full Stack Web Development - Project
+
+# Web app with various hike trails and weather info
