@@ -1,7 +1,18 @@
 ﻿			Weather Web application Journal
+										      Shweta Korulkar
 
-	I started project work by first selecting the topic. After searching many other topics, I chooses to build Weather web application. 
-	Initially I designed project idea like how does web page should look like. Then I started reading about JS frameworks and library. I did some research about frameworks then I decided to choose React because it’s a good framework to start as a beginner. I read about React and how to use React to build web application. As I am using React for the first time, I did some research about React.
+	Week 1 and Week 2:
+
+		Ever since the announcement for final project was made, We were unsure of what might be a good project. After searching lot’s of topics I came up with an idea that we will make a hiking trails web app that displays some useful information about hikes to the users and lets them choose a hike to go to in their region. My partner Harsha also liked this idea and we both decided to do that project. Eventually, we also made some decisions to integrate even more useful features to our app like the weather information, map routes to a selected hike, hike trail statistics etc. So, Harsha created a web flow design on how our website might work. Meanwhile I searched for various APIs that might help for our project.
+
+	Week 3:
+
+		We are looking for some good API’s for our project. After lot’s of reading and research we found 3 good API’s for weather application. We got some Map and Hike trail API’s as well. But we are still searching for good Hike trail API’s. Simultaneously we will start working on coding. We also started reading about which JS framework to choose. We read about React and Angular. Then we decided to choose React because it’s easy to learn and good for beginner's to start with. 
+
+	Week 4:
+		
+		I started writing code. Created home page with links that points to different pages. Initially created div and added links in that div. But wasn’t looking good after resizing the window. So I searched for some website on google and after using dev tools got an idea about navbar. So to fixed the div issue used navbar. Referred MDN site to read about navbar. Going to create weather page with links like hike_tails link and home link.
+After creating these pages, I started learning React. I did some research about how to use react framework. I also followed the lecture notes and whatever data available on webdev-example folder to learn react. 
 	
 	
 	
