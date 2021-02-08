@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import Button from 'react-bootstrap/Button';
 import React from "react";
 // import { Navbar, Nav, NavItem, Button,NavDropdown, FormControl,MenuItem,Form,Container } from 'react-bootstrap';
@@ -59,5 +60,36 @@ function App() {
     </BrowserRouter>
   );
 }
+=======
+import React from 'react';
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Switch,
+  Route,
+ } from 'react-router-dom';
 
+import Nav from './Nav';
+import Weather from './Weather';
+
+function App() {
+  return (
+          <Router> 
+              <div className="App">
+                  <Nav />
+                  <Switch>
+                    <Route  path="/" exact component={Home} />
+                    <Route path="/Weather" component={Weather} />
+                </Switch>
+>>>>>>> Updated old pages by adding Navbar and links. Now links are navigating to other pages
+
+              </div>
+          </Router>
+                
+    );   
+}
+const Home = () =>(
+  <div>
+    <h2>Home Page</h2>
+  </div>
+);
 export default App;
