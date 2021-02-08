@@ -1,8 +1,17 @@
 // importing required modules
-import React from "react";
+import React, { Component } from 'react'; 
+import './style.css';
 
-const WeatherPage = () => {
-  return <p>Weather</p>; /* TODO: Write code for WeatherPage HTML */
-};
+import Weather_form from './form.js'
 
-export default WeatherPage;
+function Weather() {
+  return (
+    <div className="weather_page">
+        <Weather_form />
+      
+    </div>
+     
+  );
+}
+
+export default Weather;
