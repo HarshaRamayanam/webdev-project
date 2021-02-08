@@ -63,13 +63,15 @@ function App() {
 =======
 import React from 'react';
 import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
+import './components/style.css';
 import { BrowserRouter as Router, Switch,
   Route,
  } from 'react-router-dom';
 
-import Nav from './Nav';
-import Weather from './Weather';
+import Nav from './components/Nav.js';
+import Weather from './components/WeatherPage.js';
+import HomePage from './components/HomePage.js'
+import HikeTrailsPage from './components/HikeTrailsPage.js';
 
 function App() {
   return (
@@ -77,8 +79,9 @@ function App() {
               <div className="App">
                   <Nav />
                   <Switch>
-                    <Route  path="/" exact component={Home} />
+                    <Route  path="/" exact component={HomePage} />
                     <Route path="/Weather" component={Weather} />
+                    <Route path="/HikeTrails" component={HikeTrailsPage} />
                 </Switch>
 >>>>>>> Updated old pages by adding Navbar and links. Now links are navigating to other pages
 
@@ -87,9 +90,5 @@ function App() {
                 
     );   
 }
-const Home = () =>(
-  <div>
-    <h2>Home Page</h2>
-  </div>
-);
+
 export default App;
