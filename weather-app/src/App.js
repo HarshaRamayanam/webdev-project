@@ -6,8 +6,8 @@ import logo from "./images/weather_icon.png";
 
 // importing components
 import HomePage from "./components/HomePage";
-import HikeTrailsPage from "./components/hike-trails/HikeTrailsPage";
-import WeatherPage from "./components/weather/WeatherPage";
+import HikeTrailsPage from "./components/HikeTrailsPage";
+import WeatherPage from "./components/WeatherPage";
 
 // importing react modules required to redirect pages
 import { Switch, Route, Link, BrowserRouter } from "react-router-dom";
@@ -19,8 +19,8 @@ function App() {
     <BrowserRouter>
       <div>
         <div>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand as={Link} to="/">
+          <Navbar expand="lg" bg="dark" variant="dark">
+            <Nav.Link as={Link} to="/">
               <img
                 src={logo}
                 width="40"
@@ -28,14 +28,11 @@ function App() {
                 className="d-inline-block align-top"
                 alt="Weather logo"
               />
-            </Navbar.Brand>
-            <Navbar.Brand as={Link} to="/hike-trails"></Navbar.Brand>
-            <Navbar.Brand as={Link} to="/weather"></Navbar.Brand>
+            </Nav.Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link as={Link} to="/"></Nav.Link>
                 <Nav.Link as={Link} to="/hike-trails">
                   Hike-Trails
                 </Nav.Link>
