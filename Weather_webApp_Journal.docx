@@ -13,7 +13,10 @@
 		
 		I started writing code. Created home page with links that points to different pages. Initially created div and added links in that div. But wasn’t looking good after resizing the window. So I searched for some website on google and after using dev tools got an idea about navbar. So to fixed the div issue used navbar. Referred MDN site to read about navbar. Going to create weather page with links like hike_tails link and home link.
 After creating these pages, I started learning React. I did some research about how to use react framework. I also followed the lecture notes and material available on webdev-example folder to learn react. Then I realized I should have create react app first before creating home page. So I started again by first creating react app .  
-		It takes me lot of time to learn how to use react. I got an issue with Navbar. I used react bootstrap to display Navbar but it wasn’t appearing on a screen. I did go in depth to resolve this issue. I tried different ways of using ‘navbar’. But still it wasn’t working. After some time I figure out I didn’t import bootstrap.min.css. So, after importing bootstrap.min.css navbar displayed on screen and finally resolved this navbar issue. Also displayed search box on the screen. Now going to work on API.
+		It takes me lot of time to learn how to use react. I got an issue with Navbar and links to other pages. I used react bootstrap to display Navbar but it wasn’t appearing on a screen. I did go in depth to resolve this issue. I tried different ways of using ‘navbar’ like with react bootstrap and without react bootstrap. But still it wasn’t working. Finally I resoled this issue by capitalizing the first letter of the function. Earlier I was using small letters in function name so it wasn’t accessing that page. So finally ended up using <nav> for navbar. After displaying navbar I worked on links to route to other pages. Now going to work on API.
+
+	Week 5:
+		Started fetching data from the API.
 	
 	
 	
