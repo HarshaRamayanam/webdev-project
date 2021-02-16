@@ -7,45 +7,47 @@ function Header() {
   };
 
   return (
-    <Router>
-      <div className="navbar">
-        <nav>
-          <br />
-          <h3>Logo</h3>
-          <ul className="nav-links">
-            <Link
-              style={navStyle}
-              to="/"
-              onClick={() => {
-                window.location.href = "/";
-              }}
-            >
-              <li>Home</li>
-            </Link>
+    <header>
+      <Router>
+        <div className="navbar">
+          <nav>
+            <br />
+            <h3>Logo</h3>
+            <ul className="nav-links">
+              <Link
+                style={navStyle}
+                to="/"
+                onClick={() => {
+                  window.location.href = "/";
+                }}
+              >
+                <li>Home</li>
+              </Link>
 
-            <Link
-              style={navStyle}
-              to="/weather"
-              onClick={() => {
-                window.location.href = "/weather";
-              }}
-            >
-              <li>Weather</li>
-            </Link>
+              <Link
+                style={navStyle}
+                to="/weather"
+                onClick={() => {
+                  window.location.href = "/weather";
+                }}
+              >
+                <li>Weather</li>
+              </Link>
 
-            <Link
-              style={navStyle}
-              to="/hike-trails"
-              onClick={() => {
-                window.location.href = "/hike-trails";
-              }}
-            >
-              <li>HikeTrails</li>
-            </Link>
-          </ul>
-        </nav>
-      </div>
-    </Router>
+              <Link
+                style={navStyle}
+                to="/hike-trails"
+                onClick={() => {
+                  window.location.href = "/hike-trails";
+                }}
+              >
+                <li>HikeTrails</li>
+              </Link>
+            </ul>
+          </nav>
+        </div>
+      </Router>
+    </header>
   );
 }
 
