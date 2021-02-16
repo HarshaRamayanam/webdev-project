@@ -3,10 +3,9 @@
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  
 }
 
-nav{
+nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -15,65 +14,58 @@ nav{
   color: white;
   width: 100%;
   border-radius: 10px;
- 
-  
-} 
+}
 
-.nav-links{
+.nav-links {
   width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  color: white; 
+  color: white;
   font-size: 20px;
   margin-bottom: 1px;
-  
-
 }
 
-h4{
-    color: white;
-    padding-top: 20px;
-    margin-left: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+h4 {
+  color: white;
+  padding-top: 20px;
+  margin-left: 30px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h3{
+h3 {
   color: white;
   padding-top: 5px;
   margin-bottom: 5px;
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
-  .flex-container{
+.flex-container {
   width: 400px;
   height: 200px;
   padding: auto;
-  background-color:rgb(78, 73, 73);
-  
-  margin:auto;
+  background-color: rgb(78, 73, 73);
+
+  margin: auto;
   margin-top: 100px;
   border-radius: 15px 15px 15px 15px;
- 
 }
-.button{
-    width: 30%;
-    height: 40px;
-    border-radius: 10px;
-    color: black ;
-    margin-top: 15px;
-    text-align: center;
-    margin-left: 135px;
-    font-size: 20px;
-    outline: none;
-    appearance: none;
-    
+.button {
+  width: 30%;
+  height: 40px;
+  border-radius: 10px;
+  color: black;
+  margin-top: 15px;
+  text-align: center;
+  margin-left: 135px;
+  font-size: 20px;
+  outline: none;
+  appearance: none;
 }
 
-.searchBar{
+.searchBar {
   color: black;
   font-size: 18px;
   display: block;
@@ -90,7 +82,3 @@ h3{
   transition: 0.4s ease;
   margin-top: 30px;
 }
-
-
-
-
