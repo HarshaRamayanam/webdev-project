@@ -1,9 +1,12 @@
-
 // importing required modules
-import React from "react";
+import HikeForm from "./HikeForm";
 
 const HikeTrailsPage = () => {
-  return <p>Hike Trails</p>; /* TODO: Write code for HikeTrailsPage HTML */
+  return (
+    <div className="hike_page">
+      <HikeForm />
+    </div>
+  );
 };
 
 export default HikeTrailsPage;
