@@ -7,8 +7,9 @@ function Weather_form () {
                 <div>
                     <div className="flex-container">
                         <div>
-                        <h3>Get weather forecast </h3>
+                        <h4>Get weather forecast </h4>
                         <input type="text" placeholder="Enter city name"  className="searchBar" />
+                        <button className="button" type="button">Search</button>
                         </div>
                     </div>
                 </div>
