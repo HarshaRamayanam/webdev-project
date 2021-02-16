@@ -17,13 +17,19 @@ function Nav() {
             <div className="navbar">
                 <nav>
                     <br />
-                    <h2>Check weather and go for the Hike</h2>
+                    <h3>Logo</h3>
                     <ul className="nav-links">
-                        <Link style={navStyle} to="/Weather" onClick={() => {window.location.href="/Weather"}}>
-                             <li>Weather</li>
-                        </Link>
+                        
                         <Link style={navStyle} to="/" onClick={() => {window.location.href="/"}}>
                             <li>Home</li>
+                        </Link>
+
+                        <Link style={navStyle} to="/weather" onClick={() => {window.location.href="/weather"}}>
+                             <li>Weather</li>
+                        </Link>
+
+                        <Link style={navStyle} to="/hike-trails" onClick={() => {window.location.href="/hike-trails"}}>
+                            <li>HikeTrails</li>
                         </Link>
                        
                     </ul>
