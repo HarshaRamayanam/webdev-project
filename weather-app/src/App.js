@@ -2,14 +2,16 @@
 // import Button from 'react-bootstrap/Button';
 import React from "react";
 import "./App.css";
+import 'weather-icons/css/weather-icons.css';
 // importing components
+import "bootstrap/dist/css/bootstrap.min.css";
 import HomePage from "./components/HomePage";
 import HikeTrailsPage from "./components/HikeTrailsPage";
 import WeatherPage from "./components/WeatherPage";
-import Nav from './components/Nav.js';
+import Nav from './components/Header.js';
 
 // importing react modules required to redirect pages
-import { Switch, Route, Link, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 
 function App() {
