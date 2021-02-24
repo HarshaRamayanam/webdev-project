@@ -48,24 +48,65 @@ form {
 }
 
 .card_info {
-  margin-left: 25px;
-  width: 250px;
-  margin-bottom: 25px;
+
+  box-shadow: 0 0 10px #ccc;
+  background-color: rgba(250, 250, 250, 0.9);
+  width: 800px;
+  height: 8em;
+  border-radius: 7px;
+ 
 }
 .alert {
   color: black;
   background-color: whitesmoke;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: white;
-  padding-top: 5px;
-  align-items: center;
-  text-align: center;
+.we_icon > h4{
+  padding-top: 0px;
+  align-content: center;
 }
+
+.city_name{
+  color: #222222;
+  padding-top: 20px;
+  font-size: 10px;
+ 
+ } 
+ .city_temp > h1{
+   color: #222222;
+   padding-top: 20px;
+   font-size: 40px;
+   margin-left: 50px;
+  margin-right: 50px;
+  }
+  .city_temp > h3{
+    color: #222222;
+   padding-top: 20px;
+   font-size: 40px;
+   margin-left: 50px;
+  margin-right: 50px;
+
+  }
+
+
+.cardbar{
+  box-shadow: 0 0 10px #ccc;
+  background-color: rgba(250, 250, 250, 0.9);
+  width: 600px;
+  height: 430px;
+  border-radius: 5px;
+  margin-left: 330px;
+  margin-top: 10px;
+  
+}
+.cardline{
+  box-shadow: 0 0 10px #ccc;
+  background-color: rgba(250, 250, 250, 0.9);
+  width: 600px;
+  height: 430px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
 
 form input[name="city"] {
   background-color: whitesmoke;
@@ -81,15 +122,20 @@ form input:focus {
 }
 
 .cards {
-  margin-left: 200px;
+  /* margin-left: 0px; */
+  align-items: center;
   border: 3px;
-  width: 300px;
+  width: 500px;
   margin-top: 15px;
   display: flex;
-  height: 500px;
+  height: 180px;
+  margin-left: 650px;
 }
 
-footer {
+.graphnames{
+  text-align: center;
+}
+/* footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -97,4 +143,4 @@ footer {
   background-color: black;
   color: white;
   text-align: center;
-}
+} */
