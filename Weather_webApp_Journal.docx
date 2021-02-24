@@ -12,15 +12,15 @@
 	Week 4:
 		
 		I started writing code. Created home page with links that points to different pages. Initially created div and added links in that div. But wasn’t looking good after resizing the window. So I searched for some website on google and after using dev tools got an idea about navbar. So to fixed the div issue used navbar. Referred MDN site to read about navbar. Going to create weather page with links like hike_tails link and home link.
-After creating these pages, I started learning React. I did some research about how to use react framework. I also followed the lecture notes and material available on webdev-example folder to learn react. Then I realized I should have create react app first before creating home page. So I started again by first creating react app. .  
+After creating these pages, I started learning React. I did some research about how to use react framework. I also followed the lecture notes and material available on webdev-example folder to learn react. Then I realized I should have create react app first before creating home page. So I started again by first creating react app by using the command “npm install create-react-app”.  
 		It takes me lot of time to learn how to use react. I got an issue with Navbar and links to other pages. I used react bootstrap to display Navbar but it wasn’t appearing on a screen. I did go in depth to resolve this issue. I tried different ways of using ‘navbar’ like with react bootstrap and without react bootstrap. But still it wasn’t working. Later I realize that I was getting an error because of function name. So resolves this issue by capitalizing the first letter of the function. So finally ended up using <nav> for navbar. After displaying navbar I worked on links to route to other pages. Now going to work on API.
 
 	Week 5 and week 6:
-		Working on fetching data from the API. I used open weather map API. Initially displayed current weather information. Later going to display forecast. I faced problem while displaying data after clicking the button, due to calling the method in a wrong way in the form. But resolved that issue after googling this error and understanding where I am getting wrong. To display the weather Icon, I am using one public GitHub repository named https://github.com/erikflowers/weather-icons . On this repository I found 222 weather themed Icons so I choose to use this. These icons are in svg format. To get clear image chooses .svg format rather that .png and .jpg. Also used environment variable to hide API key.  
+		Working on fetching data from the API. I used open weather map API. Initially displayed current weather information. Later going to display forecast. I faced problem while displaying data after clicking the button, due to calling the method in a wrong way in the form. But resolved that issue after googling this error and understanding where I am getting wrong. To display the weather Icon, I am using one public GitHub repository named https://github.com/erikflowers/weather-icons . On this repository I found 222 weather themed Icons so I choose to use this. I cloned this repository in our project repository. These icons are in svg format. To get clear image chooses .svg format rather that .png and .jpg. Also used environment variable to hide API key. T use environment variable I use “npm install dotenv” and then created .env file and then added API key in this file. I also included .env in the .gitignore file.
 
 	Week 7:
 
-	Working on displaying weather forecast information.  
+	Working on displaying weather forecast information. Planning to display data in the graph.   
 	
 	
 	
