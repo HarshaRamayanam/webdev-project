@@ -3,7 +3,10 @@ import React, { Component } from "react";
 import "../App.css";
 import WeatherForm from "./form.js";
 import WeatherCard from "./Weather_card";
+import Barchart from "./barChart";
+import LineChart from "./lineChart";
 require("dotenv").config();
+
 
 const ApiKey = process.env.REACT_APP_API_KEY;
 class Weather extends Component {
@@ -14,10 +17,13 @@ class Weather extends Component {
       country: undefined,
       icon: undefined,
       temperature: undefined,
-      minTemp: undefined,
-      maxTemp: undefined,
+      feels_like : undefined,
       description: "",
       error: false,
+      minTemp: undefined,
+      maxTemp: undefined,
+      latitude : undefined,
+      longitude : undefined
     };
     this.weatherICON = {
       Thunderstorm: "wi-thunderstorm",
@@ -70,18 +76,15 @@ class Weather extends Component {
         `http://api.openweathermap.org/data/2.5/weather?q=${input_city}&appid=${ApiKey}`
       );
       const response_data = await Response.json();
-      console.log(response_data);
-      console.log(response_data.main.temp);
-      console.log(response_data.weather[0].description);
-      console.log(response_data.main.temp_min);
-      console.log(response_data.temp_max);
-
+      // console.log(response_data);
       this.setState({
         city: `${response_data.name}, ${response_data.sys.country}`,
         temperature: this.calCelcius(response_data.main.temp),
         minTemp: this.calCelcius(response_data.main.temp_min),
         maxTemp: this.calCelcius(response_data.main.temp_max),
         description: response_data.weather[0].description,
+        latitude : response_data.coord.lat,
+        longitude : response_data.coord.lon
       });
       this.getWeatherIcon(this.weatherICON, response_data.weather[0].id);
     } else {
@@ -92,7 +95,8 @@ class Weather extends Component {
     return (
       <div className="weather_page">
         <WeatherForm loadweather={this.getWeather} error={this.state.error} />
-        <WeatherCard
+       
+        <WeatherCard 
           city={this.state.city}
           country={this.state.country}
           weather_icon={this.state.icon}
@@ -101,6 +105,35 @@ class Weather extends Component {
           maxTemp={this.state.maxTemp}
           description={this.state.description}
         />
+       
+        
+        <div className="row lw mt-4">
+          <div className="col-md-7 col-lg-6 col-sm-12">
+            <div className="cardbar">
+              <div className="card-body">
+                <Barchart 
+                  lat = {this.state.latitude} 
+                  lon = {this.state.longitude}
+                />
+                <br></br>
+                <p className="graphnames">X-axis: Days , Y-axis:Temperature in Celcius</p>
+              </div>
+            </div>
+          </div>
+
+        
+          <div className="col-md-7 col-lg-6 col-sm-12"> 
+            <div className="cardline">
+                <div className="card-body">
+                  <LineChart
+                    lat ={this.state.latitude}
+                    lon ={this.state.longitude}
+                  /><br></br>
+                  <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
+                </div>
+            </div>
+          </div>
+       </div>
       </div>
     );
   }
