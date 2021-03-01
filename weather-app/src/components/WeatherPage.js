@@ -1,10 +1,17 @@
 // importing required modules
 import React, { Component } from "react";
 import "../App.css";
-import WeatherForm from "./form.js";
-import WeatherCard from "./Weather_card";
-import Barchart from "./barChart";
-import LineChart from "./lineChart";
+import WeatherForm from "./form/form.js";
+import WeatherCard from "./Weather_page/Weather_card";
+import LineChart from "./chart/lineChart";
+import "./Weather_page/WeatherCard.css";
+import "./chart/chart.css";
+import "./form/form.css";
+import Forecast from './forecast/Forecast';
+import "./forecast/Forecast.css";
+import axios from 'axios';
+import moment from 'moment';
+
 require("dotenv").config();
 
 
@@ -16,14 +23,16 @@ class Weather extends Component {
       city: undefined,
       country: undefined,
       icon: undefined,
-      temperature: undefined,
-      feels_like : undefined,
+      temp_before: undefined,
       description: "",
-      error: false,
-      minTemp: undefined,
-      maxTemp: undefined,
       latitude : undefined,
-      longitude : undefined
+      longitude : undefined,
+      date_time:undefined,
+      icon_id:undefined,
+      feels : undefined,
+      daily_info: [],
+      day:undefined
+     
     };
     this.weatherICON = {
       Thunderstorm: "wi-thunderstorm",
@@ -32,15 +41,11 @@ class Weather extends Component {
       Snow: "wi-snow",
       Atmosphere: "wi-fog",
       Clear: "wi-day-sunny",
-      Clouds: "wi-day-fog",
+      Clouds: "wi-day-fog"
     };
   }
 
-  calCelcius(temp) {
-    let celcius = Math.floor(temp - 273.15);
-    return celcius;
-  }
-  getWeatherIcon(icons, rangeID) {
+  getWeatherIcon(rangeID) {
     switch (true) {
       case rangeID >= 200 && rangeID <= 232:
         this.setState({ icon: this.weatherICON.Thunderstorm });
@@ -68,75 +73,151 @@ class Weather extends Component {
     }
   }
 
+
+  componentDidMount() { 
+ 
+      let currentComponent = this;
+      if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            
+            axios.get("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+ApiKey+"")
+           .then((response) => {
+           
+              currentComponent.setState({
+                latitude: response.data.coord.lat,
+                longitude: response.data.coord.lon,
+                city: `${response.data.name}, ${response.data.sys.country}` ,
+                temp_before:Math.floor(response.data.main.temp - 273.15),
+                feels: Math.floor(response.data.main.feels_like - 273.15),
+                date_time: moment.unix(response.data.dt).format('MMMM Do YYYY'),
+                description: response.data.weather[0].description,
+                icon:response.data.weather[0].icon,
+                day:moment.unix(response.data.dt).format('dddd')
+              });
+          });   
+        });
+      }
+ 
+    };
+    
+  
+
+  calCelcius(temp) {
+    let celcius = Math.floor(temp - 273.15);
+    return celcius;
+  }
+  
+
   getWeather = async (e) => {
     e.preventDefault();
     const input_city = e.target.elements.city.value;
-    if (input_city) {
-      const Response = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${input_city}&appid=${ApiKey}`
-      );
-      const response_data = await Response.json();
-      // console.log(response_data);
-      this.setState({
-        city: `${response_data.name}, ${response_data.sys.country}`,
-        temperature: this.calCelcius(response_data.main.temp),
-        minTemp: this.calCelcius(response_data.main.temp_min),
-        maxTemp: this.calCelcius(response_data.main.temp_max),
-        description: response_data.weather[0].description,
-        latitude : response_data.coord.lat,
-        longitude : response_data.coord.lon
-      });
-      this.getWeatherIcon(this.weatherICON, response_data.weather[0].id);
-    } else {
-      this.setState({ error: true });
-    }
+ 
+    axios.get("https://api.openweathermap.org/data/2.5/weather?q="+input_city+"&appid="+ApiKey+"")
+      
+      .then((response) => {
+
+        this.setState({
+          city: `${response.data.name}, ${response.data.sys.country}`,
+          temp_before: this.calCelcius(response.data.main.temp),
+          date_time: moment.unix(response.data.dt).format('MMMM Do YYYY'),
+          description: response.data.weather[0].description,
+          feels: Math.floor(response.data.main.feels_like - 273.15),
+          latitude : response.data.coord.lat,
+          longitude : response.data.coord.lon,
+          icon:response.data.weather[0].icon,
+          day:moment.unix(response.data.dt).format('dddd')
+        });
+       
+      })
+      console.log(this.state.latitude, this.state.longitude);
+ 
   };
   render() {
-    return (
-      <div className="weather_page">
-        <WeatherForm loadweather={this.getWeather} error={this.state.error} />
-       
-        <WeatherCard 
-          city={this.state.city}
-          country={this.state.country}
-          weather_icon={this.state.icon}
-          temperature={this.state.temperature}
-          minTemp={this.state.minTemp}
-          maxTemp={this.state.maxTemp}
-          description={this.state.description}
-        />
-       
-        
-        <div className="row lw mt-4">
-          <div className="col-md-7 col-lg-6 col-sm-12">
-            <div className="cardbar">
-              <div className="card-body">
-                <Barchart 
-                  lat = {this.state.latitude} 
-                  lon = {this.state.longitude}
-                />
-                <br></br>
-                <p className="graphnames">X-axis: Days , Y-axis:Temperature in Celcius</p>
+    const { name } = this.state;
+    
+    if(name){
+      return (
+        <div className="ml-auto col-md-6  col-sm-6">
+          <WeatherForm loadweather={this.getWeather} error={this.state.error} />
+         
+          <WeatherCard 
+            city={this.state.city}
+            weather_icon={this.state.icon}
+            temperature={this.state.temp_before}
+            description={this.state.description}
+            feelsLike={this.state.feels}
+            dateTime = {this.state.date_time}
+            Day={this.state.day}
+           
+          />
+
+            <div className="col-md-7 col-lg-6 col-sm-12"> 
+              <div className="cardline">
+                  <div className="card-body">
+                    <LineChart
+                      lat ={this.state.latitude}
+                      lon ={this.state.longitude}
+                    /><br></br>
+                    <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
+                  </div>
               </div>
             </div>
+            {/* <div className="col-md-7 col-lg-7 col-sm-12">  */}
+                <div className="row">
+                    <Forecast
+                      lat ={this.state.latitude}
+                      lon ={this.state.longitude}
+                     
+                    />
+              </div>
+          {/* </div> */}
           </div>
-
-        
-          <div className="col-md-7 col-lg-6 col-sm-12"> 
-            <div className="cardline">
-                <div className="card-body">
-                  <LineChart
+       
+      );
+    }
+    else{
+      return (
+        <div className="ml-auto col-md-6  col-sm-6">
+          <WeatherForm loadweather={this.getWeather} error={this.state.error} />
+         
+          <WeatherCard 
+            city={this.state.city}
+            weather_icon={this.state.icon}
+            temperature={this.state.temp_before}
+            description={this.state.description}
+            feelsLike ={this.state.feels}
+            dateTime = {this.state.date_time}
+            Day={this.state.day}
+      
+          />
+    
+            <div className="col-md-7 col-lg-6 col-sm-12"> 
+              <div className="cardline">
+                  <div className="card-body">
+                    <LineChart
+                      lat ={this.state.latitude}
+                      lon ={this.state.longitude}
+                    /><br></br>
+                    <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
+                  </div>
+              </div>
+            </div>
+            
+                <div className="row">
+                    <Forecast
                     lat ={this.state.latitude}
                     lon ={this.state.longitude}
-                  /><br></br>
-                  <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
-                </div>
-            </div>
+                    />
+              </div>
+          
           </div>
-       </div>
-      </div>
-    );
+      );
+
+    }
   }
 }
-
+    
+    
 export default Weather;
