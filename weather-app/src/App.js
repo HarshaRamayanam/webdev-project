@@ -9,6 +9,7 @@ import WeatherPage from "./components/WeatherPage";
 import HeaderNav from "./components/HeaderNav.js";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
+import 'font-awesome/css/font-awesome.min.css';
 
 // importing react modules required to redirect pages
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
