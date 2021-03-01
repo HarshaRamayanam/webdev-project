@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HikeDisplayCard from "./HikeDisplayCard";
+import "./stylesheets/HikeDisplay.css";
 
 const HikeDisplay = ({ data, searchBy, userInput }) => {
   // console.log(data);
@@ -51,7 +52,12 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
       break;
   }
 
-  return <>{cards.slice(0, 6)}</>;
+  return (
+    <>
+      <h2 className="results">Results found: &nbsp; {cards.length}</h2>
+      {cards}
+    </>
+  );
 };
 
 export default HikeDisplay;
