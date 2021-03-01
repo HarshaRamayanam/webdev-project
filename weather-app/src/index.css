@@ -8,7 +8,8 @@ body {
   background-image: url('./image/rainbow.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-
+  /* background-color:#293251; */
+ 
 }
 
 code {
