@@ -19,6 +19,8 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
             <HikeDisplayCard
               key={trailInfo.trail_id}
               name={trailInfo.name}
+              avg_rating={trailInfo.avg_rating}
+              difficulty_rating={trailInfo.difficulty_rating}
               loc={trailInfo.state_name}
             />
           );
@@ -37,6 +39,8 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
             <HikeDisplayCard
               key={trailInfo.trail_id}
               name={trailInfo.name}
+              avg_rating={trailInfo.avg_rating}
+              difficulty_rating={trailInfo.difficulty_rating}
               loc={trailInfo.state_name}
             />
           );
