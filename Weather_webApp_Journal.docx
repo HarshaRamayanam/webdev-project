@@ -20,7 +20,11 @@ After creating these pages, I started learning React. I did some research about 
 
 	Week 7:
 
-	Working on displaying weather forecast information. Planning to display data in the graph.   
+	Working on displaying weather forecast information. Planning to display data in the graph. Going to use bar chart to display daily data minimum and maximum temperature and line chart to display hourly data temperature. 
+
+	Week 8:
+
+	Displayed weather forecast information using bar chart. I faced problem while displaying bar chart. It was looking like pi chart because I forgot to use height and width for bar’s. After adding height and width it worked. Now working on displaying data in line chart. Also will add CSS for good layout. 
 	
 	
 	
