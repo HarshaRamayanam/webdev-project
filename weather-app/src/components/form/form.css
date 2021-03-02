@@ -6,15 +6,15 @@
   
 
   .fa-search {
-    font-size: 35px;
-    color:white;
+    font-size: 55px;
+    color:rgb(19, 4, 102);
   }
   .input-group{
     margin-left: 1px;
   }
   .inputSearch {
     border-style: solid 1px rgba(255, 255, 255, 0.589);
-    background-color: rgba(255, 255, 255, 0.322);
+    background-color: rgba(255, 255, 255, 0.979);
     border: none;
     outline: none;
     padding: 2px;
@@ -22,10 +22,6 @@
    
   }
   
-  .row{
-    width: 350px;
-  
-  }
  
 
   .searchLabel {
@@ -37,17 +33,38 @@
   
   }
   @media screen and (min-width: 769px){
-    .row{
-      width: 400px;
+    .form_row{
+      width: 40%;
       margin-top: 10px;
-
+      /* margin-left: 1400px; */
+      display: flex;
+      margin-left: 50%;
+    
+    }
+    .searchLabel {
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: white;
+      margin-left: 50%;
+    
     }
   }
   @media screen and (min-width: 414px) and (max-width: 768px){
      
-  .row{
+  .form_row{
     width: 300px;
     margin-left: 5px;
+    margin-left: 100px;
+    display: flex;
+  }
+  .searchLabel {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: white;
+    margin-left: 100px;
+  
   }
 
   }

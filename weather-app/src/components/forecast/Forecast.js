@@ -42,10 +42,10 @@ render(){
    
     return(
         <span className="container forecast-container">
-       
-        <h5 className="text-center forecastTitle"><b>5 day Forecast</b></h5>
-   
-        <div className="forecast_row">
+     
+            <h4 className="text-center forecastTitle"><b>5 day Forecast</b></h4>
+        
+        <div className="row">
            
              {this.state.foreCast.map((item) => (
                 
@@ -55,7 +55,7 @@ render(){
                        
                        <div className="container">
                            <div className="row">
-                               <div className="col-6">
+                               <div className="col">
                                    <h3 className="weekday">
                                        <b>{moment.unix(item.dt).format('MM/DD/YYYY')}</b>
                                    </h3 >
@@ -63,20 +63,20 @@ render(){
                                </div>
                            </div>
                             <div className="row">
-                                <div className="col-6 text-center">
+                                <div className="col-12 text-center">
                                 
-                                    <img className="weather-icon" src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`} alt="weather icon"/>
+                                    <img className="weather-icon" src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`} alt="weather icon" width="80px"/>
                                     <p className="desc"><b>{item.weather[0].description}</b></p>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-3">
+                                <div className="col-6">
                                     <h6 className="minTemp">
                                         <b>min: 
                                         {Math.floor(item.temp.min - 273.15)}&deg;c</b>
                                     </h6>
                                 </div>    
-                                <div className="col-3">
+                                <div className="col-6">
                                     <h6 className="maxTemp">
                                         <b>max: 
                                         {Math.floor(item.temp.max - 273.15)}&deg;c</b>
