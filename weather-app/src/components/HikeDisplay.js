@@ -22,14 +22,15 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
               name={trailInfo.name}
               avg_rating={trailInfo.avg_rating}
               difficulty_rating={trailInfo.difficulty_rating}
-              loc={trailInfo.state_name}
+              state={trailInfo.state_name}
+              loc={trailInfo._geoloc}
             />
           );
         }
       });
 
       break;
-    case "loc":
+    case "state":
       cards = [];
       data.forEach((trailInfo) => {
         let found = trailInfo.state_name
@@ -42,7 +43,8 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
               name={trailInfo.name}
               avg_rating={trailInfo.avg_rating}
               difficulty_rating={trailInfo.difficulty_rating}
-              loc={trailInfo.state_name}
+              state={trailInfo.state_name}
+              loc={trailInfo._geoloc}
             />
           );
         }
