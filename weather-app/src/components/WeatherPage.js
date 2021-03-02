@@ -180,7 +180,7 @@ class Weather extends Component {
     }
     else{
       return (
-        <div className="ml-auto col-md-6  col-sm-6">
+        <div className="main">
           <WeatherForm loadweather={this.getWeather} error={this.state.error} />
          
           <WeatherCard 
