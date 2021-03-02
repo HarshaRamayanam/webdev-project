@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { LocationContext } from "./ContextStore";
 import "./stylesheets/HikeDisplayCard.css";
 
 const HikeDisplayCard = (props) => {
+  const [location, setLocation] = useContext(LocationContext);
+
+  const btnClicked = () => {
+    setLocation(props.loc);
+  };
+
   const starTotal = 5;
   let starPercentage = (props.avg_rating / starTotal) * 100;
   let starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
@@ -33,7 +41,11 @@ const HikeDisplayCard = (props) => {
           consequatur blanditiis laborum dolorem. Ipsa iure alias laboriosam
           repellendus. Non velit amet nam.
         </p>
-        <a href="#">Read More</a>
+        <Link to="/weather">
+          <button className="btn btn-primary" onClick={btnClicked}>
+            Check Weather <i className="fas fa-chevron-right"></i>
+          </button>
+        </Link>
       </div>
     </div>
   );

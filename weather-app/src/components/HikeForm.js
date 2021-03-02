@@ -37,7 +37,7 @@ function HikeForm() {
               <option value="hikeName" defaultValue>
                 Search By Hike Name
               </option>
-              <option value="loc">Search By Hike Location</option>
+              <option value="state">Search By State</option>
             </select>
           </div>
 
