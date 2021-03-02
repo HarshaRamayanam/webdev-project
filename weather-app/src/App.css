@@ -3,10 +3,9 @@
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  
 }
 
-nav {
+/* nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -15,9 +14,9 @@ nav {
   color: white;
   width: 100%;
   border-radius: 10px;
-}
+} */
 
-.nav-links {
+/* .nav-links {
   width: 40%;
   display: flex;
   justify-content: space-around;
@@ -26,7 +25,7 @@ nav {
   color: white;
   font-size: 20px;
   margin-bottom: 1px;
-}
+} */
 
 form > h4 {
   color: white;
@@ -36,7 +35,7 @@ form > h4 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar > h3 {
+/* .navbar > h3 {
   color: white;
   padding-top: 5px;
   margin-bottom: 5px;
@@ -46,11 +45,11 @@ form > h4 {
 /* .card_col{
   margin-left: 100px;
   /* margin-top: 15px;  */
-  /* display: flex;
+/* display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row wrap;
-} */ */
+} */
 form {
   margin-top: 2rem;
 }
