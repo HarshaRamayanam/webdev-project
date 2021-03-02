@@ -139,7 +139,7 @@ class Weather extends Component {
     
     if(name){
       return (
-        <div className="ml-auto col-md-6  col-sm-6">
+        <div className="main">
           <WeatherForm loadweather={this.getWeather} error={this.state.error} />
          
           <WeatherCard 
@@ -152,10 +152,10 @@ class Weather extends Component {
             Day={this.state.day}
            
           />
-
+          <div className="row lw mt-4">
             <div className="col-md-7 col-lg-6 col-sm-12"> 
               <div className="cardline">
-                  <div className="card-body">
+                  <div className="card">
                     <LineChart
                       lat ={this.state.latitude}
                       lon ={this.state.longitude}
@@ -164,7 +164,7 @@ class Weather extends Component {
                   </div>
               </div>
             </div>
-            {/* <div className="col-md-7 col-lg-7 col-sm-12">  */}
+            <div className="col-md-7 col-lg-6 col-sm-12"> 
                 <div className="row">
                     <Forecast
                       lat ={this.state.latitude}
@@ -172,7 +172,8 @@ class Weather extends Component {
                      
                     />
               </div>
-          {/* </div> */}
+          </div>
+          </div>
           </div>
        
       );
