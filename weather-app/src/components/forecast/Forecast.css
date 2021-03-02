@@ -1,0 +1,52 @@
+.weatherCard {
+    color: rgba(15, 15, 15, 0.678);
+    background-color: rgba(249, 254, 255, 0.657);
+    box-shadow: 0 10px 10px -8px #464646;
+     
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    width:200px;
+    margin-left: 1px
+
+}
+  .weekday {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 8px;
+    color: rgba(5, 5, 8, 0.678);
+    font-family: "Poppins", sans-serif;
+  
+  }
+ 
+  .minTemp,
+  .maxTemp {
+    font-family: "Poppins", sans-serif;
+    
+    font-size: 15px;
+    color: rgba(5, 5, 8, 0.678);
+  }
+  .forecastTitle {
+    font-family: "Montserrat", sans-serif;
+    color:rgb(20, 6, 6);
+    margin-top: 20px;
+  }
+  .forecast_row{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row wrap;
+   
+   
+  }
+
+ @media screen and (min-width: 414px){
+  .forecast_row{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row wrap;
+   
+  }
+  
+}
+  
+  
