@@ -12,10 +12,17 @@ import "./forecast/Forecast.css";
 import axios from 'axios';
 import moment from 'moment';
 
+
+import '../App.css';
+
+
 require("dotenv").config();
 
 
 const ApiKey = process.env.REACT_APP_API_KEY;
+// var sectionImage ={
+//   backgroundImage: `url(${})`
+// }
 class Weather extends Component {
   constructor() {
     super();
@@ -34,44 +41,102 @@ class Weather extends Component {
       day:undefined
      
     };
-    this.weatherICON = {
-      Thunderstorm: "wi-thunderstorm",
-      Drizzle: "wi-sleet",
-      Rain: "wi-storm-showers",
-      Snow: "wi-snow",
-      Atmosphere: "wi-fog",
-      Clear: "wi-day-sunny",
-      Clouds: "wi-day-fog"
-    };
+    // this.weatherICON = {
+    //   Thunderstorm: "wi-thunderstorm",
+    //   Drizzle: "wi-sleet",
+    //   Rain: "wi-storm-showers",
+    //   Snow: "wi-snow",
+    //   Atmosphere: "wi-fog",
+    //   Clear: "wi-day-sunny",
+    //   Clouds: "wi-day-fog"
+    // };
   }
 
-  getWeatherIcon(rangeID) {
-    switch (true) {
-      case rangeID >= 200 && rangeID <= 232:
-        this.setState({ icon: this.weatherICON.Thunderstorm });
-        break;
-      case rangeID >= 300 && rangeID <= 321:
-        this.setState({ icon: this.weatherICON.Drizzle });
-        break;
-      case rangeID >= 500 && rangeID <= 531:
-        this.setState({ icon: this.weatherICON.Rain });
-        break;
-      case rangeID >= 600 && rangeID <= 622:
-        this.setState({ icon: this.weatherICON.Snow });
-        break;
-      case rangeID >= 701 && rangeID <= 781:
-        this.setState({ icon: this.weatherICON.Atmosphere });
-        break;
-      case rangeID >= 801 && rangeID <= 804:
-        this.setState({ icon: this.weatherICON.Clouds });
-        break;
-      case rangeID === 800:
-        this.setState({ icon: this.weatherICON.Clear });
-        break;
-      default:
-        this.setState({ icon: this.weatherICON.Clouds });
+  // getWeatherIcon(rangeID) {
+  //   switch (true) {
+  //     case rangeID >= 200 && rangeID <= 232:
+  //       this.setState({ icon: this.weatherICON.Thunderstorm });
+  //       break;
+  //     case rangeID >= 300 && rangeID <= 321:
+  //       this.setState({ icon: this.weatherICON.Drizzle });
+  //       break;
+  //     case rangeID >= 500 && rangeID <= 531:
+  //       this.setState({ icon: this.weatherICON.Rain });
+  //       break;
+  //     case rangeID >= 600 && rangeID <= 622:
+  //       this.setState({ icon: this.weatherICON.Snow });
+  //       break;
+  //     case rangeID >= 701 && rangeID <= 781:
+  //       this.setState({ icon: this.weatherICON.Atmosphere });
+  //       break;
+  //     case rangeID >= 801 && rangeID <= 804:
+  //       this.setState({ icon: this.weatherICON.Clouds });
+  //       break;
+  //     case rangeID === 800:
+  //       this.setState({ icon: this.weatherICON.Clear });
+  //       break;
+  //     default:
+  //       this.setState({ icon: this.weatherICON.Clouds });
+  //   }
+  // }
+  setBackground(){
+    console.log("cl");
+    if(this.state.icon === "01d"){
+      console.log("clear");
+      document.body.style.backgroundImage="url('./background_images/01d.jpg')";
+    } 
+    else if(this.state.icon === "01n"){
+        document.querySelector(".main").style.backgroundImage="url('./background_images/01n.jpg')";
     }
-  }
+    else if(this.state.icon === "02d"){
+        document.body.style.backgroundImage="url('./background_images/02d.jpg')";
+    }
+    else if(this.state.icon === "02n"){
+        document.body.style.backgroundImage="url('./background_images/02n.jpg')";
+    }
+    else if(this.state.icon === "03d"){
+        document.body.style.backgroundImage="url('./background_images/03d.jpg')";
+    }
+    else if(this.state.icon === "03n"){
+        document.body.style.backgroundImage="url('./background_images/03n.jpg')";
+    }
+    else if(this.state.icon === "04d"){
+        document.body.style.backgroundImage="url('./background_images/04d.jpg')";
+    }
+    else if(this.state.icon === "04n"){
+        document.body.style.backgroundImage="url('./background_images/04n.jpg')";
+    }
+    else if(this.state.icon === "09d"){
+        document.body.style.backgroundImage="url('./background_images/09n.jpg')";
+    }
+    else if(this.state.icon === "09n"){
+        document.body.style.backgroundImage="url('./background_images/09n.jpg')";
+    }
+    else if(this.state.icon === "10d"){
+        document.body.style.backgroundImage="url('./background_images/10d.jpg')";
+    }
+    else if(this.state.icon === "10n"){
+        document.body.style.backgroundImage="url('./background_images/10n.jpg')";
+    }
+    else if(this.state.icon === "11d"){
+        document.body.style.backgroundImage="url('./background_images/11d.jpg')";
+    }
+    else if(this.state.icon === "11n"){
+        document.body.style.backgroundImage="url('./background_images/11n.jpg')";
+    }
+    else if(this.state.icon === "13d"){
+        document.body.style.backgroundImage="url('./background_images/13d.jpg')";
+    }
+    else if(this.state.icon === "13n"){
+        document.body.style.backgroundImage="url('./background_images/13n.jpg')";
+    }
+    else if(this.state.icon === "50d"){
+        document.body.style.backgroundImage="url('./background_images/50d.jpg')";
+    }
+    else if(this.state.icon === "50n"){
+        document.body.style.backgroundImage="url('./background_images/50n.jpg')";
+    }
+}
 
 
   componentDidMount() { 
@@ -84,7 +149,7 @@ class Weather extends Component {
             
             axios.get("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+ApiKey+"")
            .then((response) => {
-           
+            
               currentComponent.setState({
                 latitude: response.data.coord.lat,
                 longitude: response.data.coord.lon,
@@ -96,9 +161,12 @@ class Weather extends Component {
                 icon:response.data.weather[0].icon,
                 day:moment.unix(response.data.dt).format('dddd')
               });
-          });   
+          });  
+          
         });
+        // this.setBackground();
       }
+      
  
     };
     
@@ -131,15 +199,16 @@ class Weather extends Component {
         });
        
       })
-      console.log(this.state.latitude, this.state.longitude);
- 
+      // this.setBackground();
+     
   };
   render() {
     const { name } = this.state;
     
     if(name){
       return (
-        <div className="main">
+        <div className="main" style={{backgroundImage: 'url(./background_images/'+this.state.icon+'.jpg'}} >
+          
           <WeatherForm loadweather={this.getWeather} error={this.state.error} />
          
           <WeatherCard 
@@ -152,6 +221,7 @@ class Weather extends Component {
             Day={this.state.day}
            
           />
+          
           <div className="row lw mt-4">
             <div className="col-md-7 col-lg-6 col-sm-12"> 
               <div className="cardline">
@@ -164,14 +234,14 @@ class Weather extends Component {
                   </div>
               </div>
             </div>
-            <div className="col-md-7 col-lg-6 col-sm-12"> 
+            
                 <div className="row">
                     <Forecast
                       lat ={this.state.latitude}
                       lon ={this.state.longitude}
                      
                     />
-              </div>
+              
           </div>
           </div>
           </div>
@@ -180,32 +250,34 @@ class Weather extends Component {
     }
     else{
       return (
-        <div className="main">
+        <div className="main" style={{backgroundImage: 'url(./background_images/'+this.state.icon+'.jpg)'}} >
           <WeatherForm loadweather={this.getWeather} error={this.state.error} />
-         
-          <WeatherCard 
-            city={this.state.city}
-            weather_icon={this.state.icon}
-            temperature={this.state.temp_before}
-            description={this.state.description}
-            feelsLike ={this.state.feels}
-            dateTime = {this.state.date_time}
-            Day={this.state.day}
-      
-          />
-    
-            <div className="col-md-7 col-lg-6 col-sm-12"> 
-              <div className="cardline">
-                  <div className="card-body">
-                    <LineChart
-                      lat ={this.state.latitude}
-                      lon ={this.state.longitude}
-                    /><br></br>
-                    <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
+          <div className="row lw mt-3">
+                <div className="col-md-7 col-lg-6 col-sm-12">
+                    <WeatherCard 
+                      city={this.state.city}
+                      weather_icon={this.state.icon}
+                      temperature={this.state.temp_before}
+                      description={this.state.description}
+                      feelsLike ={this.state.feels}
+                      dateTime = {this.state.date_time}
+                      Day={this.state.day}
+                
+                    />
                   </div>
-              </div>
+
+                <div className="col-md-7 col-lg-6 col-sm-12"> 
+                  <div className="cardline">
+                      <div className="card-body">
+                        <LineChart
+                          lat ={this.state.latitude}
+                          lon ={this.state.longitude}
+                        /><br></br>
+                        <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
+                      </div>
+                  </div>
+                </div>
             </div>
-            
                 <div className="row">
                     <Forecast
                     lat ={this.state.latitude}
