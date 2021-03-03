@@ -48,15 +48,6 @@ const HikeDirections = ({ currLoc }) => {
     return () => map.remove();
   }, []);
 
-  //   window.mapboxgl.accessToken =
-  //     "pk.eyJ1IjoiaGFyc2hhYmR6IiwiYSI6ImNrbHJsbzZheDAxc3Iydm1zbXFsamZncTAifQ.3PFyd85ZhdRb4YNcxFVbFA";
-  //   var map = new window.mapboxgl.Map({
-  //     container: "map", // container ID
-  //     style: "mapbox://styles/mapbox/streets-v11", // style URL
-  //     center: [-74.5, 40], // starting position [lng, lat]
-  //     zoom: 9, // starting zoom
-  //   });
-
   return (
     <div>
       <h3>

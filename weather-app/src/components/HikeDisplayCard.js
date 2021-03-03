@@ -3,7 +3,7 @@ import HikeDirections from "./HikeDirections";
 import { Link } from "react-router-dom";
 import { LocationContext } from "./ContextStore";
 import "./stylesheets/HikeDisplayCard.css";
-
+// {lat: 233.900, lng: 2323.32}
 const HikeDisplayCard = (props) => {
   const [location, setLocation] = useContext(LocationContext);
   const [directionsClick, setDirectionsClick] = useState(false);
