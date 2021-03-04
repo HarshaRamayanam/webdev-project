@@ -1,14 +1,15 @@
    .weatherCard {
     color: rgba(5, 5, 8, 0.678);
-    background-color: rgba(214, 228, 233, 0.657);
+    /* background-color: rgba(214, 228, 233, 0.657); */
     box-shadow: 0 10px 10px -8px #464646;
-  
+    background-color: lightgray;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 10px;
     border: none;
+    padding-bottom: 10px;
     
   }
-  
+ 
   .weekday {
     font-size: 18px;
     text-align: center;
@@ -18,24 +19,17 @@
     font-family: "Poppins", sans-serif;
   }
 
-  
-  .tempCard {
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    color: rgba(5, 5, 8, 0.678);
-  }
-  
   .minTemp,
   .maxTemp {
     font-family: "Poppins", sans-serif;
-  
     font-size: 14px;
     color: rgba(5, 5, 8, 0.678);
   }
   
   .forecastTitle {
     font-family: "Montserrat", sans-serif;
-    color:black;
-    margin-top: 15px;
+    color:white;
+    margin-top: 10px;
+
   }
   
