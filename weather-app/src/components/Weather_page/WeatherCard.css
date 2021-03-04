@@ -1,12 +1,15 @@
 .card_info {
   box-shadow: 0 0 10px #ccc;
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color:lightgray;
+  /* background-color: rgba(250, 250, 250, 0.9); */
+  /* background-color: rgba(214, 228, 233, 0.657); */
   width: 500px;
-  height: 10em;
+  /* height: 11em; */
   border-radius: 7px;
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+ 
  
 }
 .we_icon{
@@ -26,111 +29,85 @@
 .city_temp > h1 {
   color: #222222;
   padding-top: 22px;
+  font-size: 33px;
  
 }
-.city_temp > h4 {
+.city_temp > h5 {
   color: #222222;
   padding-top: 10px;
-
- 
+  font-size: 18px;
 }
-
 .cards {
-    
   align-items: center;
   border: 3px;
-  
   margin-top: 15px;
   display: flex;
-  
+  margin-left: 100px;
 
 }
 
-
-
-@media screen and (min-width:769px){
-
-  .card_info {
-    box-shadow: 0 0 10px #ccc;
-    background-color: rgba(250, 250, 250, 0.9);
-    width: 540px;
-   
-    height: 13em;
-    border-radius: 7px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 12px;
-    
-    
-  }
-
- 
+@media screen and (min-width:1230px){
   .cards {
     
     align-items: center;
     border: 3px;
-    
     margin-top: 15px;
     display: flex;
-    margin-left: 600px;
-  
+    margin-left: 550px;
+    /* width: 700px; */
   } 
-  .city_temp > h1 {
-    color: #222222;
-    padding-top: 30px;
-    font-size: 30px;
+  .card_info {
+    box-shadow: 0 0 10px #ccc;
+    
+    width: 450px;
+    height: 11em;
+    border-radius: 7px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
    
   }
-  .city_temp > h4 {
-    color: #222222;
-    padding-top: 20px;
-    font-size: 20px;
-  
+}
+
+@media screen and (min-width:769px) and(max-width:1229px){
+  .card_info {
+    box-shadow: 0 0 10px #ccc;
+    /* width: 450px; */
+    
+    /* height: 9em; */
+    border-radius: 7px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
    
   }
+  .cards {
+    align-items: center;
+    border: 3px;
+    margin-top: 15px;
+    display: flex;
+   
+  } 
 
 }
 
 @media screen and (min-width:414px) and (max-width:768px){
 
+  .cards {
+    align-items: center;
+    border: 3px;
+    margin-top: 15px;
+    display: flex;
+    margin-left: 40px;
+    
+  } 
   .card_info {
     box-shadow: 0 0 10px #ccc;
-    background-color: rgba(250, 250, 250, 0.9);
-    width: 450px;
-    
-    height: 13em;
+    height: 8em;
     border-radius: 7px;
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 12px;
-    
-  }
-
-  .cards {
-    
-    align-items: center;
-    border: 3px;
-    
-    margin-top: 15px;
-    display: flex;
-    margin-left: 40px;
-    /* margin-left: 80%; */
-  } 
-  .city_temp > h1 {
-    color: #222222;
-    padding-top: 30px;
-    font-size: 22px;
    
   }
-  .city_temp > h4 {
-    color: #222222;
-    padding-top: 20px;
-    font-size: 14px;
-  
-   
-  }
-
-
 }
