@@ -1,12 +1,12 @@
 // importing required modules
 import React, { Component } from "react";
 import "../App.css";
-import WeatherForm from "./form/form.js";
+import WeatherForm from "./weather_form/WeatherForm.js";
 import WeatherCard from "./Weather_page/Weather_card";
 import LineChart from "./chart/lineChart";
 import "./Weather_page/WeatherCard.css";
 import "./chart/chart.css";
-import "./form/form.css";
+import "./weather_form/WeatherForm.css";
 import Forecast from './forecast/Forecast';
 import "./forecast/Forecast.css";
 import axios from 'axios';
@@ -35,107 +35,74 @@ class Weather extends Component {
       latitude : undefined,
       longitude : undefined,
       date_time:undefined,
-      icon_id:undefined,
       feels : undefined,
       daily_info: [],
-      day:undefined
+      day:undefined,
+      visited_cities : [],
+      val:undefined
      
     };
-    // this.weatherICON = {
-    //   Thunderstorm: "wi-thunderstorm",
-    //   Drizzle: "wi-sleet",
-    //   Rain: "wi-storm-showers",
-    //   Snow: "wi-snow",
-    //   Atmosphere: "wi-fog",
-    //   Clear: "wi-day-sunny",
-    //   Clouds: "wi-day-fog"
-    // };
+
   }
 
-  // getWeatherIcon(rangeID) {
-  //   switch (true) {
-  //     case rangeID >= 200 && rangeID <= 232:
-  //       this.setState({ icon: this.weatherICON.Thunderstorm });
-  //       break;
-  //     case rangeID >= 300 && rangeID <= 321:
-  //       this.setState({ icon: this.weatherICON.Drizzle });
-  //       break;
-  //     case rangeID >= 500 && rangeID <= 531:
-  //       this.setState({ icon: this.weatherICON.Rain });
-  //       break;
-  //     case rangeID >= 600 && rangeID <= 622:
-  //       this.setState({ icon: this.weatherICON.Snow });
-  //       break;
-  //     case rangeID >= 701 && rangeID <= 781:
-  //       this.setState({ icon: this.weatherICON.Atmosphere });
-  //       break;
-  //     case rangeID >= 801 && rangeID <= 804:
-  //       this.setState({ icon: this.weatherICON.Clouds });
-  //       break;
-  //     case rangeID === 800:
-  //       this.setState({ icon: this.weatherICON.Clear });
-  //       break;
-  //     default:
-  //       this.setState({ icon: this.weatherICON.Clouds });
-  //   }
-  // }
   setBackground(){
     console.log("cl");
     if(this.state.icon === "01d"){
-      console.log("clear");
-      document.body.style.backgroundImage="url('./background_images/01d.jpg')";
+     
+      document.getElementById("main").style.backgroundImage="url('./background_images/01d.jpg')";
     } 
     else if(this.state.icon === "01n"){
-        document.querySelector(".main").style.backgroundImage="url('./background_images/01n.jpg')";
+      console.log("clear");
+        document.getElementById("main").style.backgroundImage="url('./background_images/01n.jpg')";
     }
-    else if(this.state.icon === "02d"){
-        document.body.style.backgroundImage="url('./background_images/02d.jpg')";
-    }
-    else if(this.state.icon === "02n"){
-        document.body.style.backgroundImage="url('./background_images/02n.jpg')";
-    }
-    else if(this.state.icon === "03d"){
-        document.body.style.backgroundImage="url('./background_images/03d.jpg')";
-    }
-    else if(this.state.icon === "03n"){
-        document.body.style.backgroundImage="url('./background_images/03n.jpg')";
-    }
-    else if(this.state.icon === "04d"){
-        document.body.style.backgroundImage="url('./background_images/04d.jpg')";
-    }
-    else if(this.state.icon === "04n"){
-        document.body.style.backgroundImage="url('./background_images/04n.jpg')";
-    }
-    else if(this.state.icon === "09d"){
-        document.body.style.backgroundImage="url('./background_images/09n.jpg')";
-    }
-    else if(this.state.icon === "09n"){
-        document.body.style.backgroundImage="url('./background_images/09n.jpg')";
-    }
-    else if(this.state.icon === "10d"){
-        document.body.style.backgroundImage="url('./background_images/10d.jpg')";
-    }
-    else if(this.state.icon === "10n"){
-        document.body.style.backgroundImage="url('./background_images/10n.jpg')";
-    }
-    else if(this.state.icon === "11d"){
-        document.body.style.backgroundImage="url('./background_images/11d.jpg')";
-    }
-    else if(this.state.icon === "11n"){
-        document.body.style.backgroundImage="url('./background_images/11n.jpg')";
-    }
-    else if(this.state.icon === "13d"){
-        document.body.style.backgroundImage="url('./background_images/13d.jpg')";
-    }
-    else if(this.state.icon === "13n"){
-        document.body.style.backgroundImage="url('./background_images/13n.jpg')";
-    }
-    else if(this.state.icon === "50d"){
-        document.body.style.backgroundImage="url('./background_images/50d.jpg')";
-    }
-    else if(this.state.icon === "50n"){
-        document.body.style.backgroundImage="url('./background_images/50n.jpg')";
-    }
+    // else if(this.state.icon === "02d"){
+    //     document.body.style.backgroundImage="url('./background_images/02d.jpg')";
+    // }
+    // else if(this.state.icon === "02n"){
+    //     document.body.style.backgroundImage="url('./background_images/02n.jpg')";
+    // }
+    // else if(this.state.icon === "03d"){
+    //     document.body.style.backgroundImage="url('./background_images/03d.jpg')";
+    // }
+    // else if(this.state.icon === "03n"){
+    //     document.body.style.backgroundImage="url('./background_images/03n.jpg')";
+    // }
+    // else if(this.state.icon === "04d"){
+    //     document.body.style.backgroundImage="url('./background_images/04d.jpg')";
+    // }
+    // else if(this.state.icon === "04n"){
+    //     document.body.style.backgroundImage="url('./background_images/04n.jpg')";
+    // }
+    // else if(this.state.icon === "09d"){
+    //     document.body.style.backgroundImage="url('./background_images/09n.jpg')";
+    // }
+    // else if(this.state.icon === "09n"){
+    //     document.body.style.backgroundImage="url('./background_images/09n.jpg')";
+    // }
+    // else if(this.state.icon === "10d"){
+    //     document.body.style.backgroundImage="url('./background_images/10d.jpg')";
+    // }
+    // else if(this.state.icon === "10n"){
+    //     document.body.style.backgroundImage="url('./background_images/10n.jpg')";
+    // }
+    // else if(this.state.icon === "11d"){
+    //     document.body.style.backgroundImage="url('./background_images/11d.jpg')";
+    // }
+    // else if(this.state.icon === "11n"){
+    //     document.body.style.backgroundImage="url('./background_images/11n.jpg')";
+    // }
+    // else if(this.state.icon === "13d"){
+    //     document.body.style.backgroundImage="url('./background_images/13d.jpg')";
+    // }
+    // else if(this.state.icon === "13n"){
+    //     document.body.style.backgroundImage="url('./background_images/13n.jpg')";
+    // }
+    // else if(this.state.icon === "50d"){
+    //     document.body.style.backgroundImage="url('./background_images/50d.jpg')";
+    // }
+    // else if(this.state.icon === "50n"){
+    //     document.body.style.backgroundImage="url('./background_images/50n.jpg')";
+    // }
 }
 
 
@@ -146,10 +113,13 @@ class Weather extends Component {
           navigator.geolocation.getCurrentPosition(function (position) {
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
-            
+           
             axios.get("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+ApiKey+"")
            .then((response) => {
-            
+            if (response.status === 400 || response.status === 500 || response.status === 404) {
+              console.log("please enter valid city");
+            }
+              console.log(response);
               currentComponent.setState({
                 latitude: response.data.coord.lat,
                 longitude: response.data.coord.lon,
@@ -161,10 +131,13 @@ class Weather extends Component {
                 icon:response.data.weather[0].icon,
                 day:moment.unix(response.data.dt).format('dddd')
               });
+            //  console.log(this.state.latitude);
           });  
+        
           
         });
-        // this.setBackground();
+       
+        this.setBackground();
       }
       
  
@@ -178,14 +151,23 @@ class Weather extends Component {
   }
   
 
-  getWeather = async (e) => {
+  getWeather = (e) => {
     e.preventDefault();
     const input_city = e.target.elements.city.value;
  
     axios.get("https://api.openweathermap.org/data/2.5/weather?q="+input_city+"&appid="+ApiKey+"")
       
       .then((response) => {
-
+        if (response.status === 400 || response.status === 500 || response.status === 404) {
+          console.log("please enter valid city");
+        }
+        console.log("inside get weather");
+        console.log(response);
+        // let list = this.state.visited_cities;
+        // const newItem = document.getElementById("addInput");
+        // const form = document.getElementById("addCityForm");
+        
+        
         this.setState({
           city: `${response.data.name}, ${response.data.sys.country}`,
           temp_before: this.calCelcius(response.data.main.temp),
@@ -195,44 +177,78 @@ class Weather extends Component {
           latitude : response.data.coord.lat,
           longitude : response.data.coord.lon,
           icon:response.data.weather[0].icon,
-          day:moment.unix(response.data.dt).format('dddd')
+          day:moment.unix(response.data.dt).format('dddd'),
+          
         });
+        // if(newItem !== ''){
+        //   list.push(newItem)
+        //   this.setState({
+        //     visited_cities:list
+        //   });
+        //   newItem.classList.remove("is-danger");
+        //   form.reset();
        
+        // }
+        // else{ 
+        //   newItem.classList.add("is-danger");
+
+        // }
+        
       })
-      // this.setBackground();
+      // console.log(this.state.visited_cities)
+      console.log(this.state.icon);
+      this.setBackground();
      
   };
+  // handleInputChange = (event) =>{
+  //   const userSearch = event.target.value;
+  //   this.setState({
+  //     q:userSearch
+  //   });
+  // };
+
   render() {
     const { name } = this.state;
     
     if(name){
       return (
-        <div className="main" style={{backgroundImage: 'url(./background_images/'+this.state.icon+'.jpg'}} >
+        <div id="main"  >
           
-          <WeatherForm loadweather={this.getWeather} error={this.state.error} />
-         
-          <WeatherCard 
-            city={this.state.city}
-            weather_icon={this.state.icon}
-            temperature={this.state.temp_before}
-            description={this.state.description}
-            feelsLike={this.state.feels}
-            dateTime = {this.state.date_time}
-            Day={this.state.day}
-           
+          <WeatherForm 
+          loadweather={this.getWeather} 
+          error={this.state.error} 
+          // handleInputChange={this.handleInputChange}
+          // result={this.state.visited_cities}
+          // val={this.value}
+          // refe = {this.target}
           />
-          
-          <div className="row lw mt-4">
-            <div className="col-md-7 col-lg-6 col-sm-12"> 
-              <div className="cardline">
-                  <div className="card">
-                    <LineChart
-                      lat ={this.state.latitude}
-                      lon ={this.state.longitude}
-                    /><br></br>
-                    <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
+     
+          <div className="row lw mt-3">
+                <div className="col-md-12 col-lg-6 col-sm-12">
+                    <WeatherCard 
+                      city={this.state.city}
+                      weather_icon={this.state.icon}
+                      temperature={this.state.temp_before}
+                      description={this.state.description}
+                      feelsLike ={this.state.feels}
+                      dateTime = {this.state.date_time}
+                      Day={this.state.day}
+                
+                    />
+
                   </div>
-              </div>
+
+                <div className="col-md-7 col-lg-6 col-sm-12"> 
+                  <div className="cardline">
+                      <div className="card-body">
+                        <LineChart
+                          lat ={this.state.latitude}
+                          lon ={this.state.longitude}
+                        /><br></br>
+                        <p className="graphnames">X-axis: Time , Y-axis:Temperature in Celcius</p>
+                      </div>
+                  </div>
+                </div>
             </div>
             
                 <div className="row">
@@ -242,18 +258,17 @@ class Weather extends Component {
                      
                     />
               
-          </div>
-          </div>
-          </div>
-       
+                </div>
+        </div>
+     
       );
     }
     else{
       return (
-        <div className="main" style={{backgroundImage: 'url(./background_images/'+this.state.icon+'.jpg)'}} >
+        <div id="main"  >
           <WeatherForm loadweather={this.getWeather} error={this.state.error} />
           <div className="row lw mt-3">
-                <div className="col-md-7 col-lg-6 col-sm-12">
+                <div className="col-md-12 col-lg-6 col-sm-12">
                     <WeatherCard 
                       city={this.state.city}
                       weather_icon={this.state.icon}
@@ -266,7 +281,7 @@ class Weather extends Component {
                     />
                   </div>
 
-                <div className="col-md-7 col-lg-6 col-sm-12"> 
+                <div className="col-md-7 col-lg-5 col-sm-12"> 
                   <div className="cardline">
                       <div className="card-body">
                         <LineChart
