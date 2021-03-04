@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./image/rainbow.jpg');
+  background-image: url('./image/nature.jpg');
+  
   background-size: cover;
   background-repeat: no-repeat;
   /* background-color:#293251; */
