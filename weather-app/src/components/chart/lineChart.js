@@ -25,12 +25,14 @@ class LineChart extends Component{
             this.componentDidMount();
         }
     }
-    componentDidMount = async() =>{
+    componentDidMount(){
         try{
 
-            
           axios.get("https://api.openweathermap.org/data/2.5/onecall?lat="+this.props.lat+"&lon="+this.props.lon+"&exclude=minutely&appid="+ApiKey+"")
             .then((response) =>{
+              if (response.status === 400 || response.status === 500 || response.status === 404) {
+                console.log("please enter valid city");
+              }
 
             const hourly_temp = [];
             const date_time = [];
