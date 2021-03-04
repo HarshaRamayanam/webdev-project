@@ -1,5 +1,5 @@
 import React from "react";
-import "./WeatherCard.css";
+
 
 const WeatherCard = (props) => {
   return (
@@ -13,7 +13,7 @@ const WeatherCard = (props) => {
                   <h6>{props.Day}</h6>                  
               </div>
               <div className="we_icon ">
-                <img  src={`http://openweathermap.org/img/w/${props.weather_icon}.png`} class="img-fluid" alt="weather icon" width="80px" />
+                <img  src={`https://openweathermap.org/img/wn/${props.weather_icon}@2x.png`} class="img-fluid" alt="weather icon" width="80px" />
                 <h5 className="px-2"><b>{props.description}</b></h5>
               </div>
               <div className="city_temp">
@@ -22,7 +22,7 @@ const WeatherCard = (props) => {
                   ) : null}
                 
                   {props.feelsLike ? (
-                  <h4 className="px-3 py-1" >Feels Like: <b>{props.feelsLike}&deg;</b></h4>
+                  <h5 className="px-3 py-1" >Feels Like: <b>{props.feelsLike}&deg;</b></h5>
                   ) : null}
               </div>
             </div>
