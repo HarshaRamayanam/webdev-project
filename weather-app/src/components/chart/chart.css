@@ -1,42 +1,47 @@
 
   .cardline{
       box-shadow: 0 0 10px #ccc;
-    background-color: rgba(250, 250, 250, 0.9);
+    /* background-color: rgba(250, 250, 250, 0.9); */
+    /* background-color: rgba(137, 209, 235, 0.657); */
+    background-color: lightgray;
     width: 590px;
     height: 360px;
     margin-top: 10px;
     border-radius: 5px;
-    /* align-items: center; */
-    /* margin-left: 610px ; */
+
   }
   
 
 .graphnames{
     text-align: center;
   }
-
-  @media screen and (min-width:769px){
+  
+  @media screen and (min-width:1230px){
     .cardline{
-      box-shadow: 0 0 10px #ccc;
-    background-color: rgba(250, 250, 250, 0.9);
+     
+      width: 490px;
+      height: 310px;
+      margin-left: 5px;
+    }
+  
+  }
+
+  @media screen and (min-width:769px) and (max-width:1229px){
+    .cardline{
+      
     width: 490px;
-    height: 310px;
-    margin-top: 10px;
-    border-radius: 5px;
-    margin-left: 600px;
+    height: 320px;
+    margin-left: 20px ;
   }
  
   }
 
   @media screen and (min-width:414px) and (max-width:768px){
     .cardline{
-      box-shadow: 0 0 10px #ccc;
-    background-color: rgba(250, 250, 250, 0.9);
+
     width: 400px;
-    height: 350px;
-    margin-top: 10px;
-    border-radius: 5px;
-    margin-left: 10px ;
+    height: 270px;
+    margin-left: 40px ;
   }
 
     
