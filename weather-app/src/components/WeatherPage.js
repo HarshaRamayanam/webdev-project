@@ -165,7 +165,7 @@ class Weather extends Component {
         console.log(response);
         // let list = this.state.visited_cities;
         // const newItem = document.getElementById("addInput");
-        // const form = document.getElementById("addCityForm");
+        // chillsonst form = document.getElementById("addCityForm");
         
         
         this.setState({

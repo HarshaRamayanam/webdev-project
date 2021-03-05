@@ -56,7 +56,7 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
 
   return (
     <>
-      <h2 className="results">Results found: &nbsp; {cards.length}</h2>
+      <h2 className="results">Hikes found: &nbsp; {cards.length}</h2>
       {cards}
     </>
   );
