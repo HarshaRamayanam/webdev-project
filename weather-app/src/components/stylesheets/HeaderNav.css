@@ -26,3 +26,10 @@
 .navbar ul li:last-child {
   margin-right: 0;
 }
+.icon{
+  color: whitesmoke;
+  margin-left: 10px;
+}
+.icon:hover{
+ color: blue;
+}
