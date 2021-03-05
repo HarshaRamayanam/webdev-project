@@ -1,8 +1,6 @@
 
   .cardline{
-      box-shadow: 0 0 10px #ccc;
-    /* background-color: rgba(250, 250, 250, 0.9); */
-    /* background-color: rgba(137, 209, 235, 0.657); */
+    box-shadow: 0 0 10px #ccc;
     background-color: lightgray;
     width: 590px;
     height: 360px;
