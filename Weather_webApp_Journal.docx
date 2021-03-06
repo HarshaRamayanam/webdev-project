@@ -16,7 +16,9 @@ After creating these pages, I started learning React. I did some research about 
 		It takes me lot of time to learn how to use react. I got an issue with Navbar and links to other pages. I used react bootstrap to display Navbar but it wasn’t appearing on a screen. I did go in depth to resolve this issue. I tried different ways of using ‘navbar’ like with react bootstrap and without react bootstrap. But still it wasn’t working. Later I realize that I was getting an error because of function name. So resolves this issue by capitalizing the first letter of the function. So finally ended up using <nav> for navbar. After displaying navbar I worked on links to route to other pages. Now going to work on API.
 
 	Week 5 and week 6:
-		Working on fetching data from the API. I used open weather map API. Initially displayed current weather information. Later going to display forecast. I faced problem while displaying data after clicking the button, due to calling the method in a wrong way in the form. But resolved that issue after googling this error and understanding where I am getting wrong. To display the weather Icon, I am using one public GitHub repository named https://github.com/erikflowers/weather-icons . On this repository I found 222 weather themed Icons so I choose to use this. I cloned this repository in our project repository. These icons are in svg format. To get clear image chooses .svg format rather that .png and .jpg. Also used environment variable to hide API key. T use environment variable I use “npm install dotenv” and then created .env file and then added API key in this file. I also included .env in the .gitignore file.
+		Working on fetching data from the API. I used open weather map API. Initially displayed current weather information. Later going to display forecast. I faced problem while displaying data after clicking the button, due to calling the method in a wrong way in the form. But resolved that issue after googling this error and understanding where I am getting wrong. To display the weather Icon, I am using OpenWeatherMap API icon’s. Also used environment variable to hide API key. To use environment variable, I started by “npm install dotenv” and then created .env file and then added API key in this file. I also included .env in the .gitignore file.
+
+
 
 	Week 7:
 
@@ -24,7 +26,13 @@ After creating these pages, I started learning React. I did some research about 
 
 	Week 8:
 
-	Displayed weather forecast information using bar chart. I faced problem while displaying bar chart. It was looking like pi chart because I forgot to use height and width for bar’s. After adding height and width it worked. Now working on displaying data in line chart. Also will add CSS for good layout. 
+	Ended up displaying weather forecast information using cards instead of bar chart. Now working on displaying data in line chart. Also will add CSS for good layout. 
+
+	Week 9:
+Displayed line chart for 24 hour weather information. It is displaying every 2 hours data for 24 hours. Added background image according to weather condition. I faced problem while displaying background image. I tried to use getElementById to display background image but got an error. Tried to solve this error quite period of time but couldn't resolve so I used style attribute in a div. For this first imported all images in file. Also added media query. Displayed background image specific to weather condition in a div but trying to display for body to get full page image.
+
+	Week 10:
+
 	
 	
 	
