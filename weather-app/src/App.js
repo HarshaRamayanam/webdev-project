@@ -17,18 +17,22 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <LocationProvider>
-      <Router>
-        <HeaderNav />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/hike-trails" component={HikeTrailsPage} />
-          <Route exact path="/weather" component={WeatherPage} />
-          <Route component={ErrorPage} />
-        </Switch>
-        <Footer />
-      </Router>
-    </LocationProvider>
+    <div className="page-container">
+      <div className="content-wrap">
+        <LocationProvider>
+          <Router>
+            <HeaderNav />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/hike-trails" component={HikeTrailsPage} />
+              <Route exact path="/weather" component={WeatherPage} />
+              <Route component={ErrorPage} />
+            </Switch>
+          </Router>
+        </LocationProvider>
+      </div>
+      <Footer />
+    </div>
   );
 }
 export default App;

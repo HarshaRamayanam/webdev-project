@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./stylesheets/HeaderNav.css";
-import image from '../image/logo.jpg';
+import image from "../image/logo.jpg";
 console.log(image);
 function HeaderNav() {
   const linkStyle = {
@@ -12,14 +12,13 @@ function HeaderNav() {
     letterSpacing: "0.2em",
     fontSize: "14px",
   };
- 
+
   return (
     <>
       <nav className="navbar">
-      <a class="navbar-brand" href="#">
-        <img src={image} alt="Logo" width="50px" height="50px"/>
-        <span className="icon">DoHike</span>
-       </a>
+        <Link className="navbar-brand" to="/">
+          <img src={image} alt="Logo" width="50px" height="50px" />
+        </Link>
         <ul>
           <Link style={linkStyle} to="/">
             <li>Home</li>
