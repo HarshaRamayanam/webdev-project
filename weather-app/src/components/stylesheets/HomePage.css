@@ -1,0 +1,35 @@
+.homepage-container {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage-container h1 {
+  color: rgba(255, 255, 255, 0.795);
+  font-size: 50pt;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.homepage-container h3 {
+  color: rgba(11, 218, 245, 0.932);
+  filter: contrast(1.7);
+  font-family: "Great Vibes", cursive;
+  font-size: 100pt;
+}
+
+.homepage-info {
+  color: rgb(248, 252, 2);
+  filter: contrast(1.7);
+  font-size: 40pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage-info div:last-child {
+  color: rgb(3, 233, 250);
+  font-family: "Cookie", cursive;
+  font-size: 100pt;
+}
