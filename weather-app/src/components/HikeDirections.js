@@ -2,10 +2,7 @@ import React, { useRef, useEffect, useState, useContext } from "react";
 import { LocationContext } from "./ContextStore";
 
 const HikeDirections = ({ currLoc }) => {
-  console.log("Current Loc: ", currLoc);
-
-  const [location, setLocation] = useContext(LocationContext);
-  console.log("Hike location: ", location);
+  const [location] = useContext(LocationContext);
 
   const mapContainer = useRef();
   const [lng, setLng] = useState(location.lng);
@@ -15,7 +12,7 @@ const HikeDirections = ({ currLoc }) => {
   let stylingObject = {
     "div.mapContainer": {
       width: "100%",
-      height: "300px",
+      height: "600px",
     },
   };
 
@@ -50,9 +47,6 @@ const HikeDirections = ({ currLoc }) => {
 
   return (
     <div>
-      <h3>
-        Lng: {lng} Lat: {lat}
-      </h3>
       <div
         className="mapContainer"
         ref={mapContainer}

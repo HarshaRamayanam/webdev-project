@@ -15,16 +15,29 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
       cards = [];
       data.forEach((trailInfo) => {
         let found = trailInfo.name.toLowerCase().match(userInput.toLowerCase());
+
         if (found != null) {
+          let hikeinfoObj = {
+            name: trailInfo.name,
+            area_name: trailInfo.area_name,
+            city_name: trailInfo.city_name,
+            state_name: trailInfo.state_name,
+            country_name: trailInfo.country_name,
+            _geoloc: trailInfo._geoloc,
+            popularity: trailInfo.popularity,
+            length: trailInfo.length,
+            elevation_gain: trailInfo.elevation_gain,
+            difficulty_rating: trailInfo.difficulty_rating,
+            route_type: trailInfo.route_type,
+            visitor_usage: trailInfo.visitor_usage,
+            avg_rating: trailInfo.avg_rating,
+            num_reviews: trailInfo.num_reviews,
+            features: trailInfo.features,
+            activities: trailInfo.activities,
+            units: trailInfo.units,
+          };
           cards.push(
-            <HikeDisplayCard
-              key={trailInfo.trail_id}
-              name={trailInfo.name}
-              avg_rating={trailInfo.avg_rating}
-              difficulty_rating={trailInfo.difficulty_rating}
-              state={trailInfo.state_name}
-              loc={trailInfo._geoloc}
-            />
+            <HikeDisplayCard key={trailInfo.trail_id} infoObj={hikeinfoObj} />
           );
         }
       });
@@ -37,15 +50,27 @@ const HikeDisplay = ({ data, searchBy, userInput }) => {
           .toLowerCase()
           .match(userInput.toLowerCase());
         if (found != null) {
+          let hikeinfoObj = {
+            name: trailInfo.name,
+            area_name: trailInfo.area_name,
+            city_name: trailInfo.city_name,
+            state_name: trailInfo.state_name,
+            country_name: trailInfo.country_name,
+            _geoloc: trailInfo._geoloc,
+            popularity: trailInfo.popularity,
+            length: trailInfo.length,
+            elevation_gain: trailInfo.elevation_gain,
+            difficulty_rating: trailInfo.difficulty_rating,
+            route_type: trailInfo.route_type,
+            visitor_usage: trailInfo.visitor_usage,
+            avg_rating: trailInfo.avg_rating,
+            num_reviews: trailInfo.num_reviews,
+            features: trailInfo.features,
+            activities: trailInfo.activities,
+            units: trailInfo.units,
+          };
           cards.push(
-            <HikeDisplayCard
-              key={trailInfo.trail_id}
-              name={trailInfo.name}
-              avg_rating={trailInfo.avg_rating}
-              difficulty_rating={trailInfo.difficulty_rating}
-              state={trailInfo.state_name}
-              loc={trailInfo._geoloc}
-            />
+            <HikeDisplayCard key={trailInfo.trail_id} infoObj={hikeinfoObj} />
           );
         }
       });

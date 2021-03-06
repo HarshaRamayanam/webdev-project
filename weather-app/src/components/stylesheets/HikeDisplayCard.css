@@ -1,26 +1,84 @@
 .card-container {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 15px;
-  background-color: black;
+  background: inherit;
+  backdrop-filter: blur(10px);
   color: white;
-  padding: 0 1.5rem;
+  margin: 5rem 0;
+  padding: 0.5rem;
+
+  padding: 1.5rem 1.5rem;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border-color: rgba(0, 0, 0, 0.795);
+  box-shadow: 0 1.4rem 8rem rgb(0, 0, 0, 0.5);
+}
+
+.card-container::after {
+  content: "";
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(250, 15, 15, 0.05);
 }
 
 .card-info {
   margin: 0.3rem;
   padding: 4rem;
-  box-shadow: 0 1.4rem 8rem rgb(0, 0, 0, 0.5);
 }
 
 .card-title {
   font-size: 2.5rem;
-  /* text-transform: uppercase; */
 }
 
+.card-subtitle {
+  font-size: 1.2rem;
+}
+
+/* CSS for stats */
 .stats {
-  display: block;
-  font-size: 20px;
-  /* color: rgb(209, 191, 27); */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.stats .stat-name {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.stats .stat-value {
+  font-size: 15pt;
+}
+
+/* CSS for hike-features */
+.hike-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: -15px;
+  padding-bottom: 15px;
+}
+
+.hike-features .feature-label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hike-features .features {
+  margin: none;
+  font-size: 15pt;
+}
+
+.hike-features li {
+  list-style: none;
+}
+
+.hike-features li .fa-check-circle {
+  padding: 10px;
+  color: green;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 /* CSS for star rating - START*/

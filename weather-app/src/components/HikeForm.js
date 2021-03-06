@@ -8,8 +8,6 @@ function HikeForm() {
   const [userInput, setUserInput] = useState("");
   const [formSubmit, setFormSubmit] = useState(false);
 
-  // console.log(searchBy);
-
   async function fetchTrailData() {
     const PATH_TO_JSON_DATA = `./datasets/hiketrails.json`;
     const response = await fetch(PATH_TO_JSON_DATA);
