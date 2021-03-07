@@ -1,5 +1,6 @@
 footer {
-  color: rgb(60, 173, 130);
+  /* color: rgb(60, 173, 130); */
+  color:white;
   background-color: rgba(6, 57, 114, 0.486);
   padding-top: 2em;
   position: relative;
@@ -39,5 +40,5 @@ hr {
   padding: 0;
   margin: 0;
   height: 5px;
-  background-color: rgb(36, 97, 7);
+  background-color: rgb(8, 22, 2);
 }
