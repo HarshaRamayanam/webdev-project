@@ -54,91 +54,114 @@ class Weather extends Component {
       feels: undefined,
       daily_info: [],
       day: undefined,
-      time: undefined,
       dir: "",
+      
     };
   }
+ setBackground = (ICON) => {
+   switch(ICON){
+      case "01d":
+          this.setState({
+              dir: one_day
+            });
+          break;
+      case "01n":
+          this.setState({
+                  dir: one_night
+            });
+            break;
+      case "02d":
+          this.setState({
+                 dir: two_day
+               });
+            break;
+      case "02n":
+          this.setState({
+            dir: two_night,
+          });
+          break;
+      case "03d":
+          this.setState({
+            dir: three_day,
+          });
+          break;
+      case "03n":
+          this.setState({
+            dir: three_night,
+          });
+          break;
+      case "04d":
+          this.setState({
+            dir: four_day,
+          });
+          break;
+      case "04n":
+          this.setState({
+            dir: four_night,
+          });
+          break;
+      case "09d":
+          this.setState({
+            dir: nine_day,
+          });
+          break;
+      case "09n":
+          this.setState({
+            dir: nine_night,
+          });
+          break;
+      case "10n":
+          this.setState({
+            dir: ten_night,
+          });
+          break;
+      case "10d":
+          this.setState({
+            dir: ten_day,
+          });
+          break;
+      case "11d":
+          this.setState({
+            dir: eleven_day,
+          });
+          break;
+      case "11n":
+          this.setState({
+            dir: eleven_night,
+          });
+          break;
+      case "13d":
+          this.setState({
+            dir: thirteen_day,
+          });
+          break;
+      case "13n":
+          this.setState({
+            dir: thirteen_night,
+          });
+          break;
+      case "50d":
+          this.setState({
+            dir: fifty_day,
+          });
+          break;
+      case "50n":
+          this.setState({
+            dir: fifty_night,
+          });
+          break;
+      case "mist":
+          this.setState({
+            dir: mist,
+          });
+          break;
+      
+      default:
+        break;
 
-  setBackground() {
-    console.log("inside");
-    if (this.state.icon === "01d") {
-      this.setState({
-        dir: one_day,
-      });
-    } else if (this.state.icon === "01n") {
-      this.setState({
-        dir: one_night,
-      });
-    } else if (this.state.icon === "02d") {
-      this.setState({
-        dir: two_day,
-      });
-    } else if (this.state.icon === "02n") {
-      this.setState({
-        dir: two_night,
-      });
-    } else if (this.state.icon === "03d") {
-      this.setState({
-        dir: three_day,
-      });
-    } else if (this.state.icon === "03n") {
-      this.setState({
-        dir: three_night,
-      });
-    } else if (this.state.icon === "04d") {
-      this.setState({
-        dir: four_day,
-      });
-    } else if (this.state.icon === "04n") {
-      this.setState({
-        dir: four_night,
-        
-      });
-    } else if (this.state.icon === "09d") {
-      this.setState({
-        dir: nine_day,
-      });
-    } else if (this.state.icon === "09n") {
-      this.setState({
-        dir: nine_night,
-      });
-    } else if (this.state.icon === "10n") {
-      this.setState({
-        dir: ten_night,
-      });
-    } else if (this.state.icon === "10d") {
-      this.setState({
-        dir: ten_day,
-      });
-    } else if (this.state.icon === "11d") {
-      this.setState({
-        dir: eleven_day,
-      });
-    } else if (this.state.icon === "11n") {
-      this.setState({
-        dir: eleven_night,
-      });
-    } else if (this.state.icon === "13d") {
-      this.setState({
-        dir: thirteen_day,
-      });
-    } else if (this.state.icon === "13n") {
-      this.setState({
-        dir: thirteen_night,
-      });
-    } else if (this.state.icon === "50d") {
-      this.setState({
-        dir: fifty_day,
-      });
-    } else if (this.state.icon === "50n") {
-      this.setState({
-        dir: fifty_night,
-      });
-    } else if (this.state.icon === "mist") {
-      this.setState({
-        dir: mist,
-      });
-    }
+
+   }
+
   }
 
   componentDidMount = () => {
@@ -165,7 +188,7 @@ class Weather extends Component {
           ) {
             console.log("please enter valid city");
           }
-
+         
           currentComponent.setState({
             latitude: response.data.coord.lat,
             longitude: response.data.coord.lon,
@@ -176,14 +199,12 @@ class Weather extends Component {
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,
             day: moment.unix(response.data.dt).format("dddd"),
-            time: moment.unix(response.data.dt).format("hh:mm a"),
+           
           });
           
         });
       }
-      if (this.state.icon) {
-        this.setBackground();
-      }
+     
     } catch (err) {
       console.log(err);
     }
@@ -213,6 +234,9 @@ class Weather extends Component {
     ) {
       console.log("please enter valid city");
     }
+    
+    console.log(response);
+
     this.setState({
       city: `${response.data.name}, ${response.data.sys.country}`,
       temp_before: this.calCelcius(response.data.main.temp),
@@ -223,11 +247,11 @@ class Weather extends Component {
       longitude: response.data.coord.lon,
       icon: response.data.weather[0].icon,
       day: moment.unix(response.data.dt).format("dddd"),
-      time: moment.unix(response.data.dt).format("hh:mm a"),
+      
     });
-
+  
     if (this.state.icon) {
-      this.setBackground();
+      this.setBackground(this.state.icon);
     }
   };
 
