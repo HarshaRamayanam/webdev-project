@@ -11,9 +11,9 @@ const Footer = () => {
             <h4>HIKE APP INC.</h4>
             <h6 className="list-unstyled">By:</h6>
             <p>
-              <em>Shweta Korulkar</em>
+              <b><em>Shweta Korulkar</em></b>
               <br />
-              <em>Harsha Ramayanam</em>
+              <b><em>Harsha Ramayanam</em></b>
             </p>
           </div>
           {/* Column2 */}
@@ -22,7 +22,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li>
                 <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-                  ReactJS
+                  <b>ReactJS</b>
                 </a>
               </li>
               <li>
@@ -31,7 +31,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Heroku
+                  <b>Heroku</b>
                 </a>
               </li>
               <li>
@@ -40,7 +40,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Bootstrap
+                  <b>Bootstrap</b>
                 </a>
               </li>
               <li>
@@ -49,14 +49,14 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Font Awesome
+                  <b>Font Awesome</b>
                 </a>
               </li>
             </ul>
           </div>
           {/* Column3 */}
           <div className="col">
-            <h4>APIs used</h4>
+            <b><h4>APIs used</h4></b>
             <ul className="list-unstyled">
               <li>
                 <a
@@ -64,7 +64,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  OpenWeatherMap
+                  <b>OpenWeatherMap</b>
                 </a>
               </li>
               <li>
@@ -73,7 +73,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Hike Trails
+                  <b>Hike Trails</b>
                 </a>
               </li>
               <li>
@@ -82,7 +82,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  MapBox GL
+                  <b>MapBox GL</b>
                 </a>
               </li>
             </ul>
