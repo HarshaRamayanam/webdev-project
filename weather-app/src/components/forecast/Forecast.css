@@ -1,33 +1,36 @@
-   .weatherCard {
-    color: rgba(5, 5, 8, 0.678);
-    box-shadow: 0 10px 10px -8px #464646;
-    background-color: lightgray;
-    justify-content: center;
-    margin-top: 10px;
-    border: none;
-    padding-bottom: 10px;
-  }
- 
-  .weekday {
-    font-size: 18px;
-    text-align: center;
-    margin-top: 4px;
-    color: rgba(5, 5, 8, 0.678);
-  
-    font-family: "Poppins", sans-serif;
-  }
+.weatherCard {
+  color: rgba(5, 5, 8, 0.678);
+  box-shadow: 0 10px 10px -8px #464646;
+  background-color: lightgray;
+  justify-content: center;
+  margin-top: 10px;
+  border: none;
+  padding-bottom: 10px;
+}
 
-  .minTemp,
-  .maxTemp {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    color: rgba(5, 5, 8, 0.678);
-  }
-  
-  .forecastTitle {
-    font-family: "Montserrat", sans-serif;
-    color:white;
-    margin-top: 10px;
+.weekday {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 4px;
+  color: rgba(5, 5, 8, 0.678);
 
-  }
-  
+  font-family: "Poppins", sans-serif;
+}
+
+.minTemp,
+.maxTemp {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: rgba(5, 5, 8, 0.678);
+}
+
+.forecastTitle {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  margin-top: 10px;
+}
+/* .forecast-container{
+  margin-left: 15px;
+} */
+
+
