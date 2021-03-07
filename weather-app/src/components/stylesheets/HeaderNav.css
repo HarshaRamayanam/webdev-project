@@ -1,6 +1,7 @@
 .navbar {
   background-color: rgba(6, 57, 114, 0.486);
   color: rgb(255, 255, 255);
+
 }
 
 .navbar ul {
@@ -25,4 +26,11 @@
 
 .navbar ul li:last-child {
   margin-right: 0;
+}
+.icon {
+  color: whitesmoke;
+  margin-left: 10px;
+}
+.icon:hover {
+  color: blue;
 }
