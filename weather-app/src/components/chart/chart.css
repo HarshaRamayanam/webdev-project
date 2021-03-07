@@ -1,46 +1,39 @@
+.cardline {
+  box-shadow: 0 0 10px #ccc;
+  background-color: lightgray;
+  width: 590px;
+  height: 350px;
+  margin-top: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
 
-  .cardline{
-    box-shadow: 0 0 10px #ccc;
-    background-color: lightgray;
-    width: 590px;
-    height: 360px;
-    margin-top: 10px;
-    border-radius: 5px;
+.graphnames {
+  text-align: center;
+}
 
-  }
-  
-
-.graphnames{
-    text-align: center;
-  }
-  
-  @media screen and (min-width:1230px){
-    .cardline{
-     
-      width: 490px;
-      height: 310px;
-      margin-left: 5px;
-    }
-  
-  }
-
-  @media screen and (min-width:769px) and (max-width:1229px){
-    .cardline{
-      
+@media screen and (min-width: 996px) {
+  .cardline {
     width: 490px;
-    height: 320px;
-    margin-left: 20px ;
+    height: 300px;
+    margin-left: 5px;
   }
- 
+}
+
+@media screen and (min-width: 769px) and (max-width: 995px) {
+  .cardline {
+    width: 490px;
+    height: 310px;
+    margin-left: 90px;
+    margin-bottom: 10px;
   }
+}
 
-  @media screen and (min-width:414px) and (max-width:768px){
-    .cardline{
-
+@media screen and (min-width: 414px) and (max-width: 768px) {
+  .cardline {
     width: 400px;
-    height: 270px;
-    margin-left: 40px ;
+    height: 260px;
+    margin-left: 45px;
+    margin-bottom: 5px;
   }
-
-    
-  }
+}
