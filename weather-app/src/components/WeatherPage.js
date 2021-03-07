@@ -237,7 +237,7 @@ class Weather extends Component {
     if (name) {
       return (
         <div
-          id="main"
+          id="root"
           style={{
             backgroundImage: `url(${this.state.dir})`,
             backgroundPosition: "center",
