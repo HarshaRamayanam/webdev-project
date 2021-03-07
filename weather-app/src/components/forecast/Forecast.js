@@ -59,6 +59,7 @@ class Forecast extends Component {
             backgroundColor: "#FFFFFF",
             height: 0.5,
             borderColor: "#000000",
+            
           }}
         />
         <h4 className="text-center forecastTitle">
