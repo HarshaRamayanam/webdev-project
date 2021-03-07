@@ -1,33 +1,29 @@
 .card_info {
   box-shadow: 0 0 10px #ccc;
-  background-color:lightgray;
+  background-color: lightgray;
   width: 500px;
   border-radius: 7px;
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
- 
- 
 }
-.we_icon{
+.we_icon {
   padding-top: 5px;
 }
 
-.city_temp{
+.city_temp {
   align-items: center;
 }
 .city_name {
   color: #222222;
   padding-top: 10px;
   padding-left: 10px;
-
 }
 
 .city_temp > h1 {
   color: #222222;
   padding-top: 22px;
   font-size: 33px;
- 
 }
 .city_temp > h5 {
   color: #222222;
@@ -40,61 +36,54 @@
   margin-top: 15px;
   display: flex;
   margin-left: 100px;
-
 }
 
-@media screen and (min-width:1230px){
+@media screen and (min-width: 1230px) {
   .cards {
-    
     align-items: center;
     border: 3px;
     margin-top: 15px;
     display: flex;
     margin-left: 550px;
     /* width: 700px; */
-  } 
+  }
   .card_info {
     box-shadow: 0 0 10px #ccc;
-    
+
     width: 450px;
     height: 11em;
     border-radius: 7px;
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-   
   }
 }
 
-@media screen and (min-width:769px) and(max-width:1229px){
+@media screen and (min-width: 769px) and(max-width:1229px) {
   .card_info {
     box-shadow: 0 0 10px #ccc;
     border-radius: 7px;
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-   
   }
   .cards {
     align-items: center;
     border: 3px;
     margin-top: 15px;
     display: flex;
-   
-  } 
-
+    
+  }
 }
 
-@media screen and (min-width:414px) and (max-width:768px){
-
+@media screen and (min-width: 414px) and (max-width: 768px) {
   .cards {
     align-items: center;
     border: 3px;
     margin-top: 15px;
     display: flex;
     margin-left: 40px;
-    
-  } 
+  }
   .card_info {
     box-shadow: 0 0 10px #ccc;
     height: 9em;
@@ -102,6 +91,5 @@
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-   
   }
 }
