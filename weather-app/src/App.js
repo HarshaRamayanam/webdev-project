@@ -9,7 +9,7 @@ import WeatherPage from "./components/WeatherPage";
 import HeaderNav from "./components/HeaderNav.js";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
-import { LocationProvider, BgProvider } from "./components/ContextStore";
+import { LocationProvider} from "./components/ContextStore";
 import "font-awesome/css/font-awesome.min.css";
 
 // importing react modules required to redirect pages
@@ -20,7 +20,6 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <LocationProvider>
-          {/* <BgProvider> */}
           <Router>
             <HeaderNav />
             <Switch>
@@ -30,7 +29,6 @@ function App() {
               <Route component={ErrorPage} />
             </Switch>
           </Router>
-          {/* </BgProvider> */}
         </LocationProvider>
       </div>
       <Footer />

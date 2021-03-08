@@ -1,7 +1,6 @@
 .navbar {
   background-color: rgba(6, 57, 114, 0.486);
   color: rgb(255, 255, 255);
-
 }
 
 .navbar ul {
@@ -9,16 +8,55 @@
   display: flex;
 }
 
-.navbar ul li {
+/* hover underline effect */
+.navbar ul li span {
   margin: 0 40px 0 0;
   padding: 15px;
   opacity: 0.5;
   transition: all 0.4s ease;
+  position: relative;
 }
 
-.navbar ul li:hover {
+.navbar ul li span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff7000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar ul li span:hover {
   opacity: 1;
 }
+
+.navbar ul li span:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* Another hover underline effect */
+/* .navbar ul li span::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: #ff7000;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right; 
+} 
+
+.navbar ul li span:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+} */
 
 .navbar ul li:active {
   opacity: 1;
@@ -27,6 +65,7 @@
 .navbar ul li:last-child {
   margin-right: 0;
 }
+
 .icon {
   color: whitesmoke;
   margin-left: 10px;

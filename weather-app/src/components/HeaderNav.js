@@ -21,15 +21,21 @@ function HeaderNav() {
         </Link>
         <ul>
           <Link style={linkStyle} to="/">
-            <li>Home</li>
+            <li>
+              <span>Home</span>
+            </li>
           </Link>
 
           <Link style={linkStyle} to="/weather">
-            <li>Weather</li>
+            <li>
+              <span>Weather</span>
+            </li>
           </Link>
 
           <Link style={linkStyle} to="/hike-trails">
-            <li>HikeTrails</li>
+            <li>
+              <span>HikeTrails</span>
+            </li>
           </Link>
         </ul>
       </nav>
