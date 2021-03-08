@@ -234,7 +234,7 @@ class Weather extends Component {
     ) {
       console.log("please enter valid city");
     }
-    
+  
     console.log(response);
 
     this.setState({
@@ -259,15 +259,19 @@ class Weather extends Component {
     const { name } = this.state;
 
     if (name) {
+      document.body.style.backgroundImage = `url(${this.state.dir})`;
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
       return (
         <div
-          id="root"
-          style={{
-            backgroundImage: `url(${this.state.dir})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
+          id="main"
+          // style={{
+          //   backgroundImage: `url(${this.state.dir})`,
+          //   backgroundPosition: "center",
+          //   backgroundSize: "cover",
+          //   backgroundRepeat: "no-repeat",
+          // }}
         >
           <WeatherForm loadweather={this.getWeather} error={this.state.error} />
 
@@ -281,7 +285,7 @@ class Weather extends Component {
                 feelsLike={this.state.feels}
                 dateTime={this.state.date_time}
                 Day={this.state.day}
-                time={this.state.time}
+                
               />
             </div>
 
@@ -307,15 +311,19 @@ class Weather extends Component {
         </div>
       );
     } else {
+      document.body.style.backgroundImage = `url(${this.state.dir})`;
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
       return (
         <div
           id="main"
-          style={{
-            backgroundImage: `url(${this.state.dir})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
+          // style={{
+          //   backgroundImage: `url(${this.state.dir})`,
+          //   backgroundPosition: "center",
+          //   backgroundSize: "cover",
+          //   backgroundRepeat: "no-repeat",
+          // }}
         >
           <WeatherForm loadweather={this.getWeather} error={this.state.error} />
           <div className="row lw mt-3">
@@ -328,7 +336,7 @@ class Weather extends Component {
                 feelsLike={this.state.feels}
                 dateTime={this.state.date_time}
                 Day={this.state.day}
-                time={this.state.time}
+                
               />
             </div>
 
