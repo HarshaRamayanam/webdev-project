@@ -3,7 +3,7 @@ import HikeDirections from "./HikeDirections";
 import { Link } from "react-router-dom";
 import { LocationContext } from "./ContextStore";
 import "./stylesheets/HikeDisplayCard.css";
-// {lat: 233.900, lng: 2323.32}
+
 const HikeDisplayCard = ({ infoObj }) => {
   const [location, setLocation] = useContext(LocationContext);
   const [directionsClick, setDirectionsClick] = useState(false);
@@ -98,14 +98,13 @@ const HikeDisplayCard = ({ infoObj }) => {
     },
   };
 
-  // Logic to set current location, after the component mounts which further
+  // Logic to set current location, after the component mounts which in future
   // used to get directions from current location to hike location.
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
       enableHighAccuracy: true,
     });
     function successLocation(position) {
-      // console.log(position);
       const currLoc = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
@@ -149,7 +148,7 @@ const HikeDisplayCard = ({ infoObj }) => {
         <br />
         <br />
         {/* Display some stats of the hike
-            length, elevation gain, route type */}
+            "length", "elevation gain", "route type" */}
         <div className="stats">
           <div className="stat-name">Length</div>
           <div className="stat-name">Elevation Gain</div>
@@ -163,7 +162,7 @@ const HikeDisplayCard = ({ infoObj }) => {
           <div className="stat-value">{infoObj.route_type}</div>
         </div>
         {/* Display some features of the hike
-            Features, Activities */}
+            "Features", "Activities" */}
         <div className="hike-features">
           <div className="feature-label">Features</div>
           <div className="feature-label">Activities</div>
