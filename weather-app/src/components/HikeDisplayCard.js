@@ -125,7 +125,8 @@ const HikeDisplayCard = ({ infoObj }) => {
         {/* Display the Hike location as
         //  area, city, state. */}
         <div className="card-subtitle">
-          {infoObj.area_name}, {infoObj.city_name}, {infoObj.state_name}
+          {infoObj.area_name}, &nbsp;{infoObj.city_name}, &nbsp;
+          {infoObj.state_name}
         </div>
         <br />
         {/* Display the star rating */}
