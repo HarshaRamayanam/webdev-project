@@ -1,8 +1,10 @@
 // importing required modules
 import React from "react";
 import "./stylesheets/HomePage.css";
+import img from "../image/nature.jpg"; 
 
 const HomePage = () => {
+  document.body.style.backgroundImage = `url(${img})`;
   return (
     <div className="homepage-container">
       <h3>“And into the forest I go,</h3>
