@@ -2,6 +2,7 @@ import { React, Component } from "react";
 import { render } from "react-dom";
 import moment from "moment";
 import axios from "axios";
+import '../forecast/Forecast.css';
 require("dotenv").config();
 const ApiKey = process.env.REACT_APP_API_KEY;
 
