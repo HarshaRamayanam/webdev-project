@@ -1,14 +1,14 @@
 // importing required modules
-import React, { Component} from "react";
+import React, { Component } from "react";
 import "../App.css";
 import WeatherForm from "./weather_form/WeatherForm.js";
 import WeatherCard from "./Weather_page/Weather_card";
 import LineChart from "./chart/lineChart";
-import "./Weather_page/WeatherCard.css";
-import "./chart/chart.css";
-import "./weather_form/WeatherForm.css";
+// import "./Weather_page/WeatherCard.css";
+// import "./chart/chart.css";
+// import "./weather_form/WeatherForm.css";
 import Forecast from "./forecast/Forecast";
-import "./forecast/Forecast.css";
+// import "./forecast/Forecast.css";
 import axios from "axios";
 import moment from "moment";
 import one_day from "./background_images/01d.jpg";
@@ -30,7 +30,7 @@ import thirteen_night from "./background_images/13n.jpg";
 import fifty_day from "./background_images/50d.jpg";
 import fifty_night from "./background_images/50n.jpg";
 import mist from "./background_images/mist.jpg";
-import "../App.css";
+// import "../App.css";
 import { LocationContext } from "./ContextStore"; // Imported this to use global context variable from hike trails page
 
 require("dotenv").config();
@@ -38,7 +38,7 @@ require("dotenv").config();
 const ApiKey = process.env.REACT_APP_API_KEY;
 
 class Weather extends Component {
-  static contextType = LocationContext; 
+  static contextType = LocationContext;
   constructor() {
     super();
     this.state = {
@@ -49,12 +49,13 @@ class Weather extends Component {
       description: "",
       latitude: undefined,
       longitude: undefined,
-      date_time: undefined,
+      date: undefined,
       feels: undefined,
       daily_info: [],
       day: undefined,
       dir: "",
-      errorMessage:'',
+      time: undefined,
+      errorMessage: "",
     };
   }
   setBackground = (ICON) => {
@@ -165,53 +166,51 @@ class Weather extends Component {
     function objEmptyCheck(value) {
       return Object.keys(value).length === 0 && value.constructor === Object;
     }
-    
-      let currentComponent = this;
-      const context = this.context; // After component loads, get that context variable into "const context"
 
-      // First, check if that context variable is empty or not.
-      // If not empty, i.e., if it has some lat, lng values, then use axios to
-      // fetch OpenWeatherMap API using that lat, lng values.
-      // And then, set currentComponent state according to the response that we get.
-      if (!objEmptyCheck(context[0])) {
+    let currentComponent = this;
+    const context = this.context; // After component loads, get that context variable into "const context"
+
+    // First, check if that context variable is empty or not.
+    // If not empty, i.e., if it has some lat, lng values, then use axios to
+    // fetch OpenWeatherMap API using that lat, lng values.
+    // And then, set currentComponent state according to the response that we get.
+    if (!objEmptyCheck(context[0])) {
+      try {
+        async function checkWeather() {
+          const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${context[0].lat}&lon=${context[0].lng}&appid=${ApiKey}`;
+          const response = await axios.get(WEATHER_URL);
+          currentComponent.setState({
+            latitude: response.data.coord.lat,
+            longitude: response.data.coord.lon,
+            city: `${response.data.name}, ${response.data.sys.country}`,
+            temp_before: Math.floor(response.data.main.temp - 273.15),
+            feels: Math.floor(response.data.main.feels_like - 273.15),
+            date: moment.unix(response.data.dt).format("MMMM Do YYYY"),
+            description: response.data.weather[0].description,
+            icon: response.data.weather[0].icon,
+            day: moment.unix(response.data.dt).format("dddd"),
+          });
+          currentComponent.getTimeZone(
+            currentComponent.state.latitude,
+            currentComponent.state.longitude
+          );
+          if (currentComponent.state.icon) {
+            currentComponent.setBackground(currentComponent.state.icon);
+          }
+        }
+        checkWeather();
+      } catch (err) {
+        this.state.setState({
+          errorMessage: err,
+        });
+      }
+    }
+    // If geolocation access is given then use axios to
+    // fetch OpenWeatherMap API using that lat, lng values.
+    // And then, set currentComponent state according to the response that we get.
+    else if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(async function (position) {
         try {
-        async function checkWeather(){
-            const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${context[0].lat}&lon=${context[0].lng}&appid=${ApiKey}`;
-            const response =  await axios.get(WEATHER_URL)
-              currentComponent.setState({
-                latitude: response.data.coord.lat,
-                longitude: response.data.coord.lon,
-                city: `${response.data.name}, ${response.data.sys.country}`,
-                temp_before: Math.floor(response.data.main.temp - 273.15),
-                feels: Math.floor(response.data.main.feels_like - 273.15),
-                date_time: moment.unix(response.data.dt).format("MMMM Do YYYY"),
-                description: response.data.weather[0].description,
-                icon: response.data.weather[0].icon,
-                day: moment.unix(response.data.dt).format("dddd"),
-              });
-              
-              if (currentComponent.state.icon) {
-                currentComponent.setBackground(currentComponent.state.icon);
-              }
-          }
-            checkWeather();
-        
-          }
-          catch(err){
-            this.state.setState({
-              errorMessage : err
-            })
-
-          }
-  }
-      // If geolocation access is given then use axios to
-      // fetch OpenWeatherMap API using that lat, lng values.
-      // And then, set currentComponent state according to the response that we get.
-      else if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(async function (position) {
-          try{
-
-          
           var lat = position.coords.latitude;
           var lon = position.coords.longitude;
 
@@ -231,41 +230,58 @@ class Weather extends Component {
             city: `${response.data.name}, ${response.data.sys.country}`,
             temp_before: Math.floor(response.data.main.temp - 273.15),
             feels: Math.floor(response.data.main.feels_like - 273.15),
-            date_time: moment.unix(response.data.dt).format("MMMM Do YYYY"),
+            date: moment.unix(response.data.dt).format("MMMM Do YYYY"),
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,
             day: moment.unix(response.data.dt).format("dddd"),
           });
-       
+          currentComponent.getTimeZone(
+            currentComponent.state.latitude,
+            currentComponent.state.longitude
+          );
           if (currentComponent.state.icon) {
             currentComponent.setBackground(currentComponent.state.icon);
           }
-        }
-        catch(err){
+        } catch (err) {
           this.setState({
-            errorMessage: err
-          })
+            errorMessage: err,
+          });
         }
-        
-        });
-       
-      }
-      
-     
-    
+      });
+    }
   };
   calCelcius(temp) {
     let celcius = Math.floor(temp - 273.15);
     return celcius;
   }
-  // get input searched city name to call OpenWeatherMap API 
-  // And then, set currentComponent state according to the 
+  getTimeZone = async (lat_val, lon_val) => {
+    const lat_value = lat_val;
+    const lon_value = lon_val;
+    try {
+      const RESPONSE = await axios.get(
+        "https://api.ipgeolocation.io/timezone?apiKey=" +
+          "f93c4dea6ad547df8a26c12af778422e" +
+          "&lat=" +
+          lat_value +
+          "&long=" +
+          lon_value +
+          ""
+      );
+
+      this.setState({
+        time: RESPONSE.data.time_12,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  // get input searched city name to call OpenWeatherMap API
+  // And then, set currentComponent state according to the
   // response that we get.
   getWeather = async (e) => {
-
     e.preventDefault();
     const input_city = e.target.elements.city.value;
-    try{
+    try {
       const response = await axios.get(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
           input_city +
@@ -277,7 +293,7 @@ class Weather extends Component {
       this.setState({
         city: `${response.data.name}, ${response.data.sys.country}`,
         temp_before: this.calCelcius(response.data.main.temp),
-        date_time: moment.unix(response.data.dt).format("MMMM Do YYYY"),
+        date: moment.unix(response.data.dt).format("MMMM Do YYYY"),
         description: response.data.weather[0].description,
         feels: Math.floor(response.data.main.feels_like - 273.15),
         latitude: response.data.coord.lat,
@@ -285,66 +301,64 @@ class Weather extends Component {
         icon: response.data.weather[0].icon,
         day: moment.unix(response.data.dt).format("dddd"),
       });
-  
+
       if (this.state.icon) {
         this.setBackground(this.state.icon);
       }
-
-    }
-    catch(err){
-      console.log(err);
+    } catch (err) {
       this.setState({
-        errorMessage:err
-    });
-   
+        errorMessage: err,
+      });
+    }
+    this.getTimeZone(this.state.latitude, this.state.longitude);
   };
-}
 
   render() {
-    
-    if(this.state.errorMessage){
-      alert(this.state.errorMessage)
+    if (this.state.errorMessage) {
+      // alert(this.state.errorMessage + ": Please enter valid City Name");
+      <h3 className="notify">{this.state.errorMessage}</h3>
     }
-      document.body.style.backgroundImage = `url(${this.state.dir})`;
-      document.body.style.backgroundPosition = "center";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundRepeat = "no-repeat";
-      return (
-        <div id="main">
-          <WeatherForm loadweather={this.getWeather} error={this.state.error} />
-          <div className="row lw mt-3">
-            <div className="col-md-12 col-lg-6 col-sm-12">
-              <WeatherCard
-                city={this.state.city}
-                weather_icon={this.state.icon}
-                temperature={this.state.temp_before}
-                description={this.state.description}
-                feelsLike={this.state.feels}
-                dateTime={this.state.date_time}
-                Day={this.state.day}
-              />
-            </div>
+    document.body.style.backgroundImage = `url(${this.state.dir})`;
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    return (
+      <div id="main">
+        <WeatherForm loadweather={this.getWeather} error={this.state.error} />
+        <div className="row lw mt-3">
+          <div className="col-md-12 col-lg-6 col-sm-12">
+            <WeatherCard
+              city={this.state.city}
+              weather_icon={this.state.icon}
+              temperature={this.state.temp_before}
+              description={this.state.description}
+              feelsLike={this.state.feels}
+              dateTime={this.state.date}
+              Day={this.state.day}
+              time_info={this.state.time}
+            />
+          </div>
 
-            <div className="col-md-7 col-lg-5 col-sm-12">
-              <div className="cardline">
-                <div className="card-body">
-                  <LineChart
-                    lat={this.state.latitude}
-                    lon={this.state.longitude}
-                  />
-                  <br></br>
-                  <p className="graphnames">
-                    X-axis: Time , Y-axis:Temperature in Celcius
-                  </p>
-                </div>
+          <div className="col-md-7 col-lg-5 col-sm-12">
+            <div className="cardline">
+              <div className="card-body">
+                <LineChart
+                  lat={this.state.latitude}
+                  lon={this.state.longitude}
+                />
+                <br></br>
+                <p className="graphnames">
+                  X-axis: Time , Y-axis:Temperature in Celcius
+                </p>
               </div>
             </div>
           </div>
-          <div className="row">
-            <Forecast lat={this.state.latitude} lon={this.state.longitude} />
-          </div>
         </div>
-      );
-    }
+        <div className="row">
+          <Forecast lat={this.state.latitude} lon={this.state.longitude} />
+        </div>
+      </div>
+    );
   }
+}
 export default Weather;
