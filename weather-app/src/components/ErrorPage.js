@@ -1,9 +1,11 @@
 import React from "react";
+import '../App.css'
 
 const ErrorPage = () => {
+
   return (
     <div>
-      <h1 color="red">Error occurred: please check URL </h1>
+      <h1 className="message"><b>Error occurred: please check URL</b> </h1>
     </div>
   );
 };
