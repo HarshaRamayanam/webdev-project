@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./stylesheets/HeaderNav.css";
 import image from "../image/logo.jpg";
-console.log(image);
+
 function HeaderNav() {
   const linkStyle = {
     textDecoration: "none",
@@ -35,6 +35,11 @@ function HeaderNav() {
           <Link style={linkStyle} to="/hike-trails">
             <li>
               <span>HikeTrails</span>
+            </li>
+          </Link>
+          <Link style={linkStyle} to="/contact">
+            <li>
+              <span>Contact</span>
             </li>
           </Link>
         </ul>
