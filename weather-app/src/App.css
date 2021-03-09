@@ -24,3 +24,7 @@ form {
 .content-wrap {
   flex: 1;
 }
+.message{
+  color: red;
+  background-color: whitesmoke;
+}
