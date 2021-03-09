@@ -1,4 +1,5 @@
 import React from "react";
+import '../Weather_page/WeatherCard.css';
 
 const WeatherCard = (props) => {
   return (
@@ -12,7 +13,7 @@ const WeatherCard = (props) => {
               </h4>
               <h6>{props.dateTime}</h6>
               <h6>
-                {props.Day} {props.time}
+                {props.Day} {props.time_info}
               </h6>
             </div>
             <div className="we_icon ">
