@@ -1,11 +1,15 @@
 .weatherCard {
   color: rgba(5, 5, 8, 0.678);
-  box-shadow: 0 10px 10px -8px #464646;
+  box-shadow: 0 0 10px #ccc;
   background-color: lightgray;
   justify-content: center;
   margin-top: 10px;
   border: none;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  padding-top: 10px;
+  width: 190px;
+ 
 }
 
 .weekday {
@@ -22,6 +26,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   color: rgba(5, 5, 8, 0.678);
+  margin-left: 20px;
 }
 
 .forecastTitle {
@@ -29,8 +34,5 @@
   color: white;
   margin-top: 10px;
 }
-/* .forecast-container{
-  margin-left: 15px;
-} */
 
 
