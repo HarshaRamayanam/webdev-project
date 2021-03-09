@@ -2,6 +2,7 @@ import {React, Component} from 'react'
 import moment from 'moment';
 import {Line} from 'react-chartjs-2';
 import axios from 'axios';
+import '../chart/chart.css';
 
 require('dotenv').config();
 const ApiKey = process.env.REACT_APP_API_KEY;
