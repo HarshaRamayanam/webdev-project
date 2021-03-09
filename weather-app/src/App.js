@@ -9,6 +9,7 @@ import WeatherPage from "./components/WeatherPage";
 import HeaderNav from "./components/HeaderNav.js";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
+import Contact from "./components/Contact";
 import { LocationProvider} from "./components/ContextStore";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -26,6 +27,7 @@ function App() {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/hike-trails" component={HikeTrailsPage} />
               <Route exact path="/weather" component={WeatherPage} />
+              <Route exact path="/contact" component={Contact} />
               <Route component={ErrorPage} />
             </Switch>
           </Router>
