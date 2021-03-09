@@ -1,8 +1,9 @@
 .card_info {
-  box-shadow: 0 0 10px #ccc;
+  
   background-color: lightgray;
-  width: 500px;
-  border-radius: 7px;
+  box-shadow: 0 0 10px #ccc;
+  width: 540px;
+  border-radius: 10px;
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -44,14 +45,14 @@
     border: 3px;
     margin-top: 15px;
     display: flex;
-    margin-left: 550px;
-    /* width: 700px; */
+    margin-left: 450px;
+ 
   }
   .card_info {
     box-shadow: 0 0 10px #ccc;
 
     width: 450px;
-    height: 11em;
+    height: 12em;
     border-radius: 7px;
     padding-left: 10px;
     padding-top: 5px;
@@ -59,7 +60,7 @@
   }
 }
 
-@media screen and (min-width: 769px) and(max-width:1229px) {
+@media screen and (min-width: 769px) and(max-width:1229px) { 
   .card_info {
     box-shadow: 0 0 10px #ccc;
     border-radius: 7px;
@@ -72,7 +73,7 @@
     border: 3px;
     margin-top: 15px;
     display: flex;
-    
+    margin-left: 400px;
   }
 }
 
