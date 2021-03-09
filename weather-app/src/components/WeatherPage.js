@@ -30,6 +30,7 @@ import thirteen_night from "./background_images/13n.jpg";
 import fifty_day from "./background_images/50d.jpg";
 import fifty_night from "./background_images/50n.jpg";
 import mist from "./background_images/mist.jpg";
+
 // import "../App.css";
 import { LocationContext } from "./ContextStore"; // Imported this to use global context variable from hike trails page
 
@@ -56,6 +57,7 @@ class Weather extends Component {
       dir: "",
       time: undefined,
       errorMessage: "",
+      hasError: false,
     };
   }
   setBackground = (ICON) => {
@@ -315,8 +317,7 @@ class Weather extends Component {
 
   render() {
     if (this.state.errorMessage) {
-      // alert(this.state.errorMessage + ": Please enter valid City Name");
-      <h3 className="notify">{this.state.errorMessage}</h3>
+      alert(this.state.errorMessage + ": Please enter valid City Name");
     }
     document.body.style.backgroundImage = `url(${this.state.dir})`;
     document.body.style.backgroundPosition = "center";
@@ -325,6 +326,7 @@ class Weather extends Component {
     return (
       <div id="main">
         <WeatherForm loadweather={this.getWeather} error={this.state.error} />
+
         <div className="row lw mt-3">
           <div className="col-md-12 col-lg-6 col-sm-12">
             <WeatherCard
