@@ -85,6 +85,15 @@ const Footer = () => {
                   <b>MapBox GL</b>
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://app.ipgeolocation.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <b>ipgeolocation</b>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
