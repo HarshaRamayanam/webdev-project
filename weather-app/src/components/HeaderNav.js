@@ -16,9 +16,7 @@ function HeaderNav() {
   return (
     <>
       <nav className="navbar">
-        <Link className="navbar-brand" to="/">
-          <img src={image} alt="Logo" width="50px" height="50px" />
-        </Link>
+          <img src={image} alt="hike_image_ with_man_and_mountain" width="50px" height="50px" />
         <ul>
           <Link style={linkStyle} to="/">
             <li>
