@@ -4,36 +4,31 @@
   width: 590px;
   height: 350px;
   margin-top: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 5px;
 }
+
 
 .graphnames {
   text-align: center;
 }
 
-@media screen and (min-width: 996px) {
-  .cardline {
-    width: 490px;
-    height: 300px;
-    margin-left: 5px;
-  }
-}
 
-@media screen and (min-width: 769px) and (max-width: 995px) {
+@media screen and (min-width: 991px) {
+
   .cardline {
     width: 490px;
     height: 310px;
-    margin-left: 90px;
+    margin-left: 10px;
     margin-bottom: 10px;
   }
 }
 
-@media screen and (min-width: 414px) and (max-width: 768px) {
+@media screen and (min-width: 414px) and (max-width: 990px) {
   .cardline {
-    width: 400px;
-    height: 260px;
+    width: 450px;
+    height: 290px;
     margin-left: 45px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
