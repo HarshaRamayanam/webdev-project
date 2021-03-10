@@ -1,11 +1,12 @@
 import React from "react";
-import '../weather_form/WeatherForm.css';
+import "../weather_form/WeatherForm.css";
 
 const WeatherForm = (props) => {
   return (
     <div className="form_div">
       <form id="addCityForm" onSubmit={props.loadweather}>
         <div className="input-group form_row">
+          <lable for="addInput"></lable>
           <input
             type="text"
             placeholder="City"
