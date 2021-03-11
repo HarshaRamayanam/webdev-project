@@ -3,17 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 
-.homepage-container h1 {
-  color: rgba(255, 255, 255, 0.795);
-  font-size: 50pt;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 
 .homepage-container h3 {
-  color: rgba(11, 218, 245, 0.932);
+  /* color: rgba(11, 218, 245, 0.932); */
+  color: rgb(218, 8, 8);
   filter: contrast(1.7);
   font-family: "Great Vibes", cursive;
   font-size: 100pt;
@@ -33,3 +29,4 @@
   font-family: "Cookie", cursive;
   font-size: 100pt;
 }
+
