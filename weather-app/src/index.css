@@ -8,10 +8,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: url("./image/nature.jpg") no-repeat center center fixed; */
-  
 }
 
+.homepage-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./image/nature.jpg");
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
