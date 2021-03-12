@@ -1,9 +1,9 @@
 ﻿			Weather Web application Journal
-										      Shweta Korulkar
+										     Shweta Korulkar
 
 	Week 1 and Week 2:
 
-		Ever since the announcement for final project was made, We were unsure of what might be a good project. After searching lot’s of topics I came up with an idea that we will make a hiking trails web app that displays some useful information about hikes to the users and lets them choose a hike to go to in their region. My partner Harsha also liked this idea and we both decided to do this project. Eventually, we also made some decisions to integrate even more useful features to our app like the weather information, map routes to a selected hike, hike trail statistics etc. So, Harsha created a web flow design on how our website might work. Meanwhile I searched for various APIs that might help for our project.
+		Ever since the announcement for final project was made, We were unsure of what might be a good project. After searching lot’s of topics I came up with an idea that we will make a hiking trails web app that displays some useful information about hikes to the users and lets them choose a hike to go to in their region. My partner Harsha also liked this idea and we both decided to do this project. Eventually, we also made some decisions to integrate even more useful features to our app like the weather information, map routes to a selected hike, hike trail statistics etc. So, Harsha created a wireframe on how our website might work. Meanwhile I searched for various APIs that might help for our project.
 
 	Week 3:
 
@@ -34,6 +34,17 @@ Displayed line chart for 24 hour weather information. It is displaying every 2 h
 	Week 10:
 
 Worked on error handling from API response. Also displayed local time of particular city according to weather condition. Had difficulty in displaying local time. Tried using timezone and sunrise time to calculate local time but didn’t worked so used ipgeolocation API to display local time of searched city. Also added contact page with links to github link for this project repository and linkedIn profile link. Checked the accessibility of page using WAVE PAGE. Also made the page responsive.
+In the future I would like to try some animated background images according to weather condition. Also would like to display weather map. I also want to try adding horizontal scroll bar to display hourly weather information of a day .
+
+Github project repository files workflow:
+
+    • Our weather-app folder in github contains all files of weather and hike trails application. So change directory to weather-app and then run the application using “npm start”. 
+    • In components folder, WeatherPage.js is the main file of weather app where I imported all other files.
+    • In weather_page folder, Weather_card.js file is storing all current weather data of searched location.
+    • In chart folder, lineChart.js file is storing 24 hours weather data and representing that data in line chart.
+    • In forecast folder, Forecast.js file is storing and displaying information of 5 day forecast.
+    • In weather_form folder, WeatherForm.js is for creating form with textbox, button.
+    • Using props I am accessing parents variable in child.
 
 REFERENCE: 
 
@@ -41,9 +52,21 @@ REFERENCE:
 
 2) https://create-react-app.dev/docs/available-scripts
 
-3) https://www.youtube.com/watch?v=GuA0_Z1llYU
-	
-	
-	
-	
-	
+3) https://www.youtube.com/watch?v=GuA0_Z1llYU		
+
+Github repository link:
+
+https://github.com/HarshaRamayanam/webdev-project
+
+Deployed project link:
+
+https://weather-hike-app.herokuapp.com/
+
+Commands:
+
+    • git shortlog --numbered --summary
+
+
+    • git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ lines += $1 - $2 } END { printf "lines: %s\n", lines }' -; done
+
+
