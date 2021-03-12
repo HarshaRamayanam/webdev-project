@@ -15,4 +15,5 @@ All the source files for the app can be found in `weather-app` directory.
 * Run `npm install` to install the necessary dependencies.
 * Run `npm start` to see live app in your browser.
 
-### Note: We used OpenWeatherMap API and MapBoxGL API. Make sure you add your `API KEYS` in the `.env` folder.
+### Note: 
+We used OpenWeatherMap API and MapBoxGL API. Make sure you add your `API KEYS` in the `.env` folder.
