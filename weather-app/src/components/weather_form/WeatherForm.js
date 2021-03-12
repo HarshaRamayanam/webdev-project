@@ -6,7 +6,7 @@ const WeatherForm = (props) => {
     <div className="form_div">
       <form id="addCityForm" onSubmit={props.loadweather}>
         <div className="input-group form_row">
-          <lable for="addInput"></lable>
+          <label>
           <input
             type="text"
             placeholder="City"
@@ -15,6 +15,7 @@ const WeatherForm = (props) => {
             id="addInput"
             required
           />
+          </label>
 
           <div className="input-group-append">
             <button type="submit" className="btnSearch btn btn-lg">
