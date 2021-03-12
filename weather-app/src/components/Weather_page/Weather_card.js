@@ -1,5 +1,5 @@
 import React from "react";
-import '../Weather_page/WeatherCard.css';
+import "../Weather_page/WeatherCard.css";
 
 const WeatherCard = (props) => {
   return (
@@ -11,9 +11,9 @@ const WeatherCard = (props) => {
               <h4>
                 <b>{props.city}</b>
               </h4>
-              <h6>{props.dateTime}</h6>
+              <h6><b>{props.dateTime}</b></h6>
               <h6>
-                {props.Day} {props.time_info}
+                <b>{props.Day} {props.time_info}</b>
               </h6>
             </div>
             <div className="we_icon ">
@@ -36,7 +36,7 @@ const WeatherCard = (props) => {
 
               {props.feelsLike ? (
                 <h5 className="px-3 py-1">
-                  Feels Like: <b>{props.feelsLike}&deg;</b>
+                  <b>Feels Like:{props.feelsLike}&deg;</b>
                 </h5>
               ) : null}
             </div>
