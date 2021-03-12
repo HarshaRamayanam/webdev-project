@@ -162,6 +162,11 @@ class Weather extends Component {
         break;
     }
   };
+  componentDidUpdate(prevProps) {
+    if (this.props.lat !== prevProps.lat || this.props.lon !== prevProps.lon) {
+      this.componentDidMount();
+    }
+  }
 
   componentDidMount = () => {
     // check whether an object is empty or not
@@ -319,10 +324,17 @@ class Weather extends Component {
     if (this.state.errorMessage) {
       alert(this.state.errorMessage + ": Please enter valid City Name");
     }
-    document.body.style.backgroundImage = `url(${this.state.dir})`;
-    document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundRepeat = "no-repeat";
+    if (this.state.dir) {
+      document.body.style.backgroundImage = `url(${this.state.dir})`;
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+    } else {
+      document.body.style.backgroundImage = `url(../image/nature.jpg)`;
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+    }
     return (
       <div id="main">
         <WeatherForm loadweather={this.getWeather} error={this.state.error} />
