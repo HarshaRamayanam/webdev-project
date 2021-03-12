@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import "weather-icons/css/weather-icons.css";
+// import "weather-icons/css/weather-icons.css";
 // importing components
 import "bootstrap/dist/css/bootstrap.min.css";
 import HomePage from "./components/HomePage";
@@ -10,7 +10,7 @@ import HeaderNav from "./components/HeaderNav.js";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
-import { LocationProvider} from "./components/ContextStore";
+import { LocationProvider } from "./components/ContextStore";
 import "font-awesome/css/font-awesome.min.css";
 
 // importing react modules required to redirect pages
