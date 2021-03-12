@@ -3,12 +3,11 @@
 }
 .fa-search {
   font-size: 25px;
-  color: white;
+  color: blue;
 }
 .input-group {
   margin-left: 1px;
 }
-
 
 .inputSearch {
   border-style: solid 1px rgba(255, 255, 255, 0.589);
@@ -18,7 +17,6 @@
   padding: 4px;
   letter-spacing: 1px;
   font-size: 17px;
-
 }
 .searchLabel {
   font-family: "Montserrat", sans-serif;
@@ -32,9 +30,7 @@
     width: 35%;
     display: flex;
     margin-left: 50%;
-   
   }
-
 
   .searchLabel {
     font-family: "Montserrat", sans-serif;
@@ -50,9 +46,8 @@
     margin-left: 5px;
     margin-left: 30%;
     display: flex;
-    
   }
- 
+
   .searchLabel {
     font-family: "Montserrat", sans-serif;
     font-size: 10px;
