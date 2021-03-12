@@ -329,12 +329,7 @@ class Weather extends Component {
       document.body.style.backgroundPosition = "center";
       document.body.style.backgroundSize = "cover";
       document.body.style.backgroundRepeat = "no-repeat";
-    } else {
-      document.body.style.backgroundImage = `url(../image/nature.jpg)`;
-      document.body.style.backgroundPosition = "center";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundRepeat = "no-repeat";
-    }
+    }  
     return (
       <div id="main">
         <WeatherForm loadweather={this.getWeather} error={this.state.error} />
