@@ -9,7 +9,6 @@
   border-radius: 10px;
   padding-top: 10px;
   width: 190px;
- 
 }
 
 .weekday {
@@ -31,8 +30,6 @@
 
 .forecastTitle {
   font-family: "Montserrat", sans-serif;
-  color: white;
+  color: brown;
   margin-top: 10px;
 }
-
-
